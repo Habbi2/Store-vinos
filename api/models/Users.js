@@ -1,11 +1,12 @@
 const { DataTypes, Model } = require("sequelize");
 const db = require("../db");
 
-/* const bcrypt = require("bcrypt");
-} */
+const bcrypt = require("bcrypt");
+
 class User extends Model {
-/*   hash(password, salt) {
-    return bcrypt.hash(password, salt); */
+  hash(password, salt) {
+    return bcrypt.hash(password, salt)
+  }
 }
 
 User.init(
@@ -35,9 +36,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-/*     salt: {
+    salt: {
       type: DataTypes.STRING,
-    }, */
+    },
   },
   {
     sequelize : db,
@@ -45,11 +46,7 @@ User.init(
   }
 );
 
-
-module.exports = User;
-
-
-/* User.beforeCreate((user) => {
+User.beforeCreate((user) => {
   return bcrypt
     .genSalt(16)
     .then((salt) => {
@@ -60,4 +57,7 @@ module.exports = User;
       user.password = hash;
     });
 });
- */
+
+module.exports = User;
+
+
