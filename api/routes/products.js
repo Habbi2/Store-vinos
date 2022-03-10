@@ -28,10 +28,9 @@ router.put('/find/:name', (req, res) => {
     },
     returning: true,
   })
-  .then(product => {
-    res.send(product);
-  })
-  .catch(err => console.log(err));
+    .then(product => {
+      res.send(product);
+    })
 })
 
 router.delete("/delete/:name", (req, res, next) => {
@@ -41,7 +40,6 @@ router.delete("/delete/:name", (req, res, next) => {
     },
   })
     .then(() => res.sendStatus(202))
-    .catch(next);
 });
 
 module.exports = router

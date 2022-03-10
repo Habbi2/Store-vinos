@@ -1,6 +1,5 @@
 const Products = require("./Products");
 const Users = require("./Users");
+const Cart = require("./Cart");
 
-Users.belongsTo(Products, { as: "ventas" })
-
-module.exports = { Users, Products };
+module.exports = { Users, Products, Cart };

@@ -11,10 +11,13 @@ const localStrategy = require("passport-local").Strategy;
 
 const db = require("./db");
 const routes = require("./routes");
+
+//models
 const User = require("./models/Users");
 const Products = require("./models/Products");
+const Cart = require("./models/Cart")
 
-
+//middleware
 app.use(express.json());
 
 app.use(volleyball);
@@ -24,7 +27,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("tiny"));
 app.use(cookieParser());
 
-app.use(sessions({ secret: "vino"}));
+app.use(sessions({
+  secret: "vino",
+  resave: true,
+  saveUninitialized: true
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
