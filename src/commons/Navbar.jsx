@@ -1,21 +1,20 @@
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import Bootstrap from "bootstrap";
+
 import "../style/style.scss";
 import { Link } from "react-router-dom";
 
 const NavbarP = () => {
   return (
-    <nav class="navbar">
-      <div class="navbarSection">
-        <a href="/">Home</a>
+    <nav className="navbar">
+      <div className="navbarSection">
+        <Link to="/">Home</Link>
       </div>
-      <div class="navbarSection2">
-        <a href="/">Productos</a>
-        <a href="/">Categorías</a>
-        <a href="/">Buscar</a>
+      <div className="navbarSection2">
+        <Link to="/productos">Productos</Link>
+        <Link to="/categorias">Categorías</Link>
+        <Link to="/search">Buscar</Link>
       </div>
-      <div class="navbarSection3">
-        <a href="/login">Login</a>
+      <div className="navbarSection3">
+        <Link to="/login">Login</Link>
       </div>
     </nav>
   );
