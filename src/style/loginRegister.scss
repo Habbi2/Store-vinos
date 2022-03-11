@@ -1,0 +1,209 @@
+:root {
+    --blanco: #ffffff;
+    --gris1: #edf2f6;
+    --gris2: #2f3848;
+    --gris3: #1a202d;
+    --negro: #000000;
+    --headingFont: 'Raleway', sans-serif;
+    --textFont: 'Roboto', sans-serif;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  html {
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 62.5%;
+  }
+  body {
+    min-height: 100%;
+    background-color: rgb(110, 93, 93);
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-family: var(--textFont);
+  }
+  
+  h1,
+  h2 {
+    font-family: var(--headingFont);
+    font-weight: 900;
+    margin: 0 0 4rem 0;
+    text-align: center;
+    color: var(--gris2);
+  }
+  h1 span {
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    color: var(--gris2);
+  }
+  
+  /** BOTONES **/
+  .btn {
+    margin-top: 2rem;
+    font-family: var(--headingFont);
+    padding: 1.5rem;
+    font-size: 1em;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    cursor: pointer;
+    color: whitesmoke;
+  }
+  .btn-primario {
+    background-color: rgb(110, 93, 93);
+    color: var(--blanco);
+  }
+/*   .btn-primario:hover {
+    background-color: rgb(104, 86, 86);
+  } */
+  .btn-secundario {
+    background-color: var(--gris2);
+  }
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  .btn-submit:hover {
+    background-color: var(--gris2);
+  }
+  .btn-blank {
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: transparent;
+  }
+  .btn-eliminar {
+    background-color: var(--blanco);
+  }
+  
+  @media (min-width: 768px) {
+    .contenedor-app {
+      display: flex;
+      min-height: 100vh;
+    }
+  
+    aside {
+      background-color: var(--blanco);
+      flex: 0 0 300px;
+    }
+    .seccion-principal {
+      flex: 1;
+    }
+  }
+  
+  /* BARRA LATERAL */
+  aside {
+    padding: 3rem;
+  }
+  
+  .formulario-nuevo-proyecto {
+    margin-top: 6rem;
+  }
+  .formulario-nuevo-proyecto .input-text {
+    border-bottom: 1px solid var(--gris2);
+    border-radius: 0;
+    background-color: var(--gris1);
+  }
+  .formulario-nuevo-proyecto .input-text::placeholder {
+    color: var(--gris2);
+  }
+  .proyectos {
+    margin-top: 10rem;
+  }
+  .listado-proyectos li {
+    margin-bottom: 2rem;
+  }
+  .listado-proyectos li a {
+    font-size: 1.4rem;
+    color: var(--gris2);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--gris2);
+    padding: 4rem;
+  }
+  .nombre-usuario {
+    color: var(--blanco);
+    font-size: 2.2rem;
+    margin: 0;
+  }
+  .nombre-usuario span {
+    font-weight: 900;
+  }
+  .nav-principal a {
+    color: var(--blanco);
+    text-decoration: none;
+  }
+  .nav-principal a:first-of-type {
+    margin-right: 2rem;
+  }
+  
+
+  
+  /** TAREAS LISTADO **/
+  
+  .form-usuario {
+    background-color: rgb(110, 93, 93);
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contenedor-form {
+    padding: 5rem 3rem;
+    max-width: 500px;
+    width: 95%;
+    background-color: var(--blanco);
+    border-radius: 1rem;
+  }
+  
+  .campo-form {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+  .campo-form:last-of-type {
+    margin: 0;
+  }
+  .campo-form label {
+    flex: 0 0 100px;
+    font-family: var(--textFont);
+  }
+  .campo-form input[type='password'],
+  .campo-form input[type='email'],
+  .campo-form input[type='text'] {
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+    flex: 1;
+  }
+  
+  .enlace-cuenta {
+    margin-top: 2rem;
+    display: block;
+    opacity: 0.7;
+  }
+
+  
