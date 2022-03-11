@@ -5,6 +5,9 @@ import productos from "../assets/productos";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setProducts } from "../store/products";
+import Login from "../commons/Login";
+import Register from "../commons/Register";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/:id" element={<Product />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );
