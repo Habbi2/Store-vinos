@@ -11,7 +11,7 @@ Products.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        breed: {
+        cellar: {
             type: DataTypes.STRING,
             allowNull: false,
         },

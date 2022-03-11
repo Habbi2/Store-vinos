@@ -3,36 +3,28 @@ import { Link, useNavigate } from "react-router-dom";
 import "../style/loginRegister.scss";
 import axios from "axios";
 
-
 const Login = () => {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
 
-  const [usuario, setUsuario] = useState({
+  const [form, setForm] = useState({
     email: "",
     password: "",
-    
   });
 
   const onChange = (e) => {
-    setUsuario({
-      ...usuario,
-      [e.target.name]: e.target.value,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("/login", usuario)
-        
-      .then(() => navigate("/"));
+    axios.post("api/users/login", form).then(() => navigate("/"));
   };
   return (
     <div className="form-usuario">
       <div className="contenedor-form sombra-dark">
         <h1>Iniciar Sesión</h1>
 
-        <form onSubmit={onSubmit}> 
+        <form onSubmit={onSubmit}>
           <div className="campo-form">
             <label htmlFor="email">Email</label>
             <input

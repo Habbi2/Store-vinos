@@ -3,17 +3,16 @@ import { useParams } from "react-router";
 
 const Product = () => {
   const { id } = useParams();
-  const products = useSelector((state) => state.products);
-  let product = {};
-  if (products.resultados) product = products.resultados[id];
-  const { name, breed, price, description, image } = product;
+  const productos = useSelector((state) => state.products);
+/*   let product = {};
+  if (products.resultados) product = products.resultados[id]; */
   return (
     <div>
-      <img src={image} alt="" style={{ width: "300px" }} />
-      <h1>{name}</h1>
-      <h2>{breed}</h2>
-      <h3>{description}</h3>
-      <h4>{price}</h4>
+      <img src={productos.image} alt="" style={{ width: "300px" }} />
+      <h1>{productos.name}</h1>
+      <h2>{productos.cellar}</h2>
+      <h3>{productos.description}</h3>
+      <h4>{productos.price}</h4>
     </div>
   );
 };

@@ -7,13 +7,17 @@ import { useDispatch } from "react-redux";
 import { setProducts } from "../store/products";
 import Login from "../commons/Login";
 import Register from "../commons/Register";
+import {products} from "../dbProducts";
 
 
 function App() {
   const dispatch = useDispatch();
+  console.log("AAA",products)
+
   useEffect(() => {
-    dispatch(setProducts(productos));
+    dispatch(setProducts(products));
   }, [dispatch]);
+
   return (
     <div>
       <Routes>

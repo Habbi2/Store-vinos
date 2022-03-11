@@ -29,7 +29,7 @@ User.init(
       unique: true,
     },
     phone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     state: {
