@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../style/loginRegister.scss";
-import axios from "axios";
+import { setLoginRequest } from "../store/user";
+import { useDispatch } from "react-redux"
 
 const Login = () => {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [form, setForm] = useState({
     email: "",
@@ -17,8 +19,10 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios.post("api/users/login", form).then(() => navigate("/"));
+    dispatch(setLoginRequest(form));
+    navigate("/");
   };
+
   return (
     <div className="form-usuario">
       <div className="contenedor-form sombra-dark">

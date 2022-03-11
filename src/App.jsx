@@ -1,18 +1,17 @@
-import Home from "../commons/Home";
+import Home from "./commons/Home";
 import { Routes, Route } from "react-router-dom";
-import Product from "./Product";
-import productos from "../assets/productos";
+import Product from "./components/Product";
+import productos from "./assets/productos";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setProducts } from "../store/products";
-import Login from "../commons/Login";
-import Register from "../commons/Register";
-import {products} from "../dbProducts";
+import { setProducts } from "./store/products";
+import Login from "./commons/Login";
+import Register from "./commons/Register";
+import {products} from "./dbProducts";
 
 
 function App() {
   const dispatch = useDispatch();
-  console.log("AAA",products)
 
   useEffect(() => {
     dispatch(setProducts(products));

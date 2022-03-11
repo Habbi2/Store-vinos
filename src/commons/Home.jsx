@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const GridProduct = () => {
   const productos = useSelector((state) => state.products);
-  console.log("grid",productos);
+  
   return (
     <div>
       <NavbarP />
