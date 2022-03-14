@@ -1,27 +1,23 @@
-import "../assets/style/loginRegister.scss";
 import { Link } from "react-router-dom";
 
 const NavbarP = () => {
   return (
     <nav className="navbar">
-      <div className="navbarSection">
-        <Link to="/">Home</Link>
+      <div className="titulo">
+        <Link to="/">Alguien dijo vino ?</Link>
       </div>
-      <div className="navbarSection2">
+      <div className="dropdown">
         <Link to="/productos">Productos</Link>
         <Link to="/categorias">Categorías</Link>
 
-          <input
-            className="input is-rounded is-info"
-            type="search"
-            placeholder="Search..."
-          />
-          
       </div>
-      <div className="navbarSection3">
+        <input
+          className="input is-rounded is-info"
+          type="search"
+          placeholder="Search..."
+        />
+      <div className="form">
         <Link to="/login">Login</Link>
-      </div>
-      <div className="navbarSection3">
         <Link to="/register">Sing up</Link>
       </div>
     </nav>

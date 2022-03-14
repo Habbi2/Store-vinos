@@ -1,34 +1,34 @@
-.grid-productos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Montserrat:wght@300&family=Raleway:wght@300&display=swap');
+@import "./colors.scss";
+@import "./grid.scss";
+@import "./home.scss";
+@import "./loginRegister.scss";
+@import "./navbar.scss";
+
+* {
+  font-family: "Raleway", sans-serif;
+  color: $colorTexto;
+  
 }
 
+/* :root {
+  $headingFont: 'Raleway', sans-serif;
+  $textFont: 'Roboto', sans-serif;
+} */
 
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  background-color: rgb(110, 93, 93);
-  height: 70px;
-  width: 100%;
-  box-shadow: 0px -5px 10px 0px;
-  text-decoration: none;
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
 
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    margin: 0 2em;
-    color: whitesmoke;
-    font-weight: bold;
-  }
+body {
+  min-height: 100%;
+  background-color: rgb(236, 236, 236);
+  font-size: 16px;
+  font-size: 1.6rem;
   
-  a:hover {
-    color:rgb(99, 52, 52);
-    border: rgb(32, 31, 31) 2px solid;
-    border-radius: 5px;
-    padding: 5px;
-  }
 }
 
 
