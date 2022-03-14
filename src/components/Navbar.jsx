@@ -1,4 +1,4 @@
-import "../style/style.scss";
+import "../assets/style/loginRegister.scss";
 import { Link } from "react-router-dom";
 
 const NavbarP = () => {

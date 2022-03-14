@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../style/loginRegister.scss";
+import "../assets/style/loginRegister.scss";
 import { useDispatch } from "react-redux";
-import { setRegisterRequest } from "../store/user";
+import { setRegisterRequest } from "../state/user";
 
 const Register = () => {
   let navigate = useNavigate();

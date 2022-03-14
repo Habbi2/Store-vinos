@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import NavbarP from "./Navbar";
-import Card from "./Card";
+import Card from "../commons/Card";
 
-const GridProduct = () => {
+const Grid = () => {
   const productos = useSelector((state) => state.products);
   
   return (
@@ -18,4 +18,4 @@ const GridProduct = () => {
   );
 };
 
-export default GridProduct;
+export default Grid;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../style/loginRegister.scss";
-import { setLoginRequest } from "../store/user";
+import "../assets/style/loginRegister.scss";
+import { setLoginRequest } from "../state/user";
 import { useDispatch } from "react-redux"
 
 const Login = () => {
