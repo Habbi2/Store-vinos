@@ -11,7 +11,6 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
 
 
 router.post('/register', (req, res) => {
-
   Users.create(req.body, {
     include: { model: Products, as: "products" }
   }).then((user) => {
