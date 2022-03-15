@@ -6,7 +6,7 @@ import carrusel2 from "../img/carrusel2.png"
 
 const Home = () => {
   return (
-<>
+<div className="container" style={{paddingBottom : '2%'}}>
       <div className="homeFotos">
       <Carousel fade>
   <Carousel.Item>
@@ -37,7 +37,7 @@ const Home = () => {
 
       <div class="container">
         <h2>PRODUCTOS DESTACADOS</h2>
-        <div class="row">
+        <div class="row PopularCard">
           <div class="col-sm">
             <div class="card" style={{ width: "25rem" }}>
               <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="card-img-top homeCard" alt="..." />
@@ -84,7 +84,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

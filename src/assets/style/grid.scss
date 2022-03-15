@@ -1,9 +1,5 @@
 .grid{
-  display: grid;
-  margin: 0 10% 3% 10%;
-  padding-top: 7%;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
-    grid-auto-rows: minmax(100px, auto);
-  
+  padding-top: 8%;
+  padding-bottom: 3%;
+  grid-gap: 15px;
   }
