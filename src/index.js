@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
-import "./style/style.scss";
+import App from "./App";
+import "./assets/style/style.scss";
 import { BrowserRouter } from "react-router-dom";
-import store from "./store/store";
+import store from "./state/store";
 import { Provider } from "react-redux";
 
 ReactDOM.render(

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../style/loginRegister.scss";
-import axios from "axios";
+import "../assets/style/loginRegister.scss";
+import { useDispatch } from "react-redux";
+import { setRegisterRequest } from "../state/user";
 
 const Register = () => {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [form, setForm] = useState({
     name: "",
@@ -13,7 +15,6 @@ const Register = () => {
     phone: "",
     state: "",
     password: "",
-/*     confirmar: "", */
   });
 
   const onChange = (e) => {
@@ -22,9 +23,8 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("/api/users/register", form)
-      .then(() => navigate("/Login"));
+    dispatch(setRegisterRequest(form));
+    navigate("/login");
   };
 
   return (
@@ -99,17 +99,6 @@ const Register = () => {
               onChange={onChange}
             ></input>
           </div>
-         {/*  <div className="campo-form">
-            <label htmlFor="confirmar">Confirmar Contraseña</label>
-            <input
-              type="password"
-              id="confirmar"
-              name="confirmar"
-              placeholder="repita su contraseña"
-              required
-              onChange={onChange}
-            ></input>
-          </div> */}
           <div className="campo-form">
             <input
               type="submit"

@@ -1,14 +1,13 @@
 import { useSelector } from "react-redux";
-import NavbarP from "./Navbar";
-import Card from "./Card";
+import Card from "../commons/Card";
+import "../assets/style/grid.scss"
 
-const GridProduct = () => {
+const Grid = () => {
   const productos = useSelector((state) => state.products);
-  console.log("grid",productos);
+  
   return (
     <div>
-      <NavbarP />
-      <div className="grid-productos">
+      <div className="grid">
         {productos ? productos.map((value, index) => {
           return <Card key={index} product={value} />;
         }) : <p>"cargando..."</p>}
@@ -18,4 +17,4 @@ const GridProduct = () => {
   );
 };
 
-export default GridProduct;
+export default Grid;

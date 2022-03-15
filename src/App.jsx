@@ -1,18 +1,21 @@
-import Home from "../commons/Home";
+import React, { useState , useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
-import Product from "./Product";
-import productos from "../assets/productos";
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setProducts } from "../store/products";
-import Login from "../commons/Login";
-import Register from "../commons/Register";
-import {products} from "../dbProducts";
+import axios from "axios";
+
+import Navbar from "./components/Navbar"
+import Grid from "./components/Grid";
+import Product from "./components/Product";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import Register from "./components/Register";
+import { setProducts } from "./state/products";
+import {products} from "./dbProducts";
 
 
 function App() {
   const dispatch = useDispatch();
-  console.log("AAA",products)
 
   useEffect(() => {
     dispatch(setProducts(products));
@@ -20,8 +23,10 @@ function App() {
 
   return (
     <div>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/productos" element={<Grid />} />
         <Route path="/products/:id" element={<Product />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

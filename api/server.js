@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const cors = require('cors')
+const cors = require("cors");
 const morgan = require("morgan");
 const volleyball = require("volleyball");
 const bodyParser = require("body-parser");
@@ -15,23 +15,25 @@ const routes = require("./routes");
 //models
 const User = require("./models/Users");
 const Products = require("./models/Products");
-const Cart = require("./models/Cart")
+const Cart = require("./models/Cart");
 
 //middleware
 app.use(express.json());
 
 app.use(volleyball);
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("tiny"));
 app.use(cookieParser());
 
-app.use(sessions({
-  secret: "vino",
-  resave: true,
-  saveUninitialized: true
-}));
+app.use(
+  sessions({
+    secret: "vino",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -75,11 +77,10 @@ passport.deserializeUser(function (id, done) {
     .catch(done);
 });
 
-
-app.use('/api', routes)
+app.use("/api", routes);
 
 db.sync({ force: false }).then(() => {
-    app.listen(3001, () => {
-      console.log("Escuchando en puerto 3001");
-    });
+  app.listen(3001, () => {
+    console.log("Escuchando en puerto 3001");
+  });
 });
