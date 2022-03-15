@@ -9,7 +9,7 @@ const Card = ({ product }) => {
 
   return (
     <div onClick={handleClick}>
-      <img src={product.image} alt="vino_imagen" style={{ width: "200px" }} />
+      <img src={product.image} alt="vino_imagen" style={{ width: 200}}/>
       <h1>{product.name}</h1>
       <h2>{product.cellar}</h2>
       <h3>{product.description}</h3>

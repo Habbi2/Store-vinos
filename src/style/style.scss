@@ -1,8 +1,18 @@
 .grid-productos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+  .moviesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 230px);
+    gap: 40px;
+    padding: 40px;
+    justify-content: center;
+  }
+  
+  @media (max-width: 560px) {
+    .moviesGrid {
+      grid-template-columns: 100%;
+    }
+  }
+  
 }
 
 
