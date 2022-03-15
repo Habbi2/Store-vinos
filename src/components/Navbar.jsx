@@ -32,10 +32,15 @@ const NavbarP = () => {
           type="search"
           placeholder="Search..."
         />
-      <div className="form">
+     {
+       user.id?  <div className="form">
+       <Link to="/">{user.name}</Link>
+       <Link to="/" onClick={logoutButton}>LogOut</Link>
+     </div> :  <div className="form">
         <Link to="/login">Login</Link>
         <Link to="/register">Sing up</Link>
       </div>
+     }
     </nav>
   );
 };

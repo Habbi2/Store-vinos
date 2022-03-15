@@ -6,7 +6,7 @@ const passport = require("passport");
 
 
 router.post("/login", passport.authenticate("local"), (req, res) => {
-  res.status(200).send("Usuario logueado correctamente");
+  res.send(req.user);
 });
 
 
@@ -14,7 +14,7 @@ router.post('/register', (req, res) => {
   Users.create(req.body, {
     include: { model: Products, as: "products" }
   }).then((user) => {
-    res.status(201).send("Usuario creado correctamente");
+    res.sendStatus(201);
   });
 })
 
