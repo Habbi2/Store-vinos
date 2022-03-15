@@ -1,14 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap');
+
+
 .navbar {
-  position:fixed;
+  font-family: 'Balsamiq Sans', cursive;
+  position: fixed;
   z-index: 2;
-    display: flex;
-    background-color: rgb(19, 18, 18);
-    height: 70px;
-    width: 100%;
-    text-decoration: none;
+  display: flex;
+  display: flex;
+  justify-content: space-around;
+  // align-items: flex-start;
+  background-color: rgb(19, 18, 18);
+  height: 70px;
+  width: 100%;
+  text-decoration: none;
 }
 
-.form a{
+.form a {
   text-decoration: none;
   text-transform: uppercase;
   margin: 0 1em;
@@ -16,13 +23,13 @@
 }
 
 .form a:hover {
-  color:rgb(189, 158, 100);
+  color: rgb(189, 158, 100);
   border: rgb(189, 158, 100) 2px solid;
   border-radius: 5px;
   padding: 5px;
 }
 
-.dropdown a{
+.dropdown a {
   text-decoration: none;
   text-transform: uppercase;
   margin: 0 1em;
@@ -30,16 +37,51 @@
 }
 
 .dropdown a:hover {
-  color:rgb(189, 158, 100);
+  color: rgb(189, 158, 100);
   border: rgb(189, 158, 100) 2px solid;
   border-radius: 5px;
   padding: 5px;
 }
 
-
-.titulo a{
+.titulo a {
+  font-family: 'Caveat', cursive;
+  display: flex;
+  justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
   margin: 0 1em;
+  color: whitesmoke;
+  width: 220px;
+  height: 70px;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 3;
+}
+
+.carrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.3;
+  width: 5rem;
+  height: 5rem;
+  // background-color: red;
+}
+
+.log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+i {
+  font-size: 2em;
   color: whitesmoke;
 }

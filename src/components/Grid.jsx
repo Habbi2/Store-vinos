@@ -6,15 +6,15 @@ const Grid = () => {
   const productos = useSelector((state) => state.products);
   
   return (
-    <div>
-      <div className="grid">
+    <div className="container">
+      <div className="row grid">
         {productos ? productos.map((value, index) => {
           return <Card key={index} product={value} />;
         }) : <p>"cargando..."</p>}
       </div>
-      ) : (<></>)
     </div>
   );
 };
 
 export default Grid;
+
