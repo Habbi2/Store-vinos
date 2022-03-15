@@ -1,6 +1,22 @@
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+
+import { setLogoutRequest, setUserMeRequest } from "../state/user";
 
 const NavbarP = () => {
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.users);
+  
+  useEffect(() =>{
+    dispatch(setUserMeRequest())
+  },[dispatch])
+  
+  const logoutButton = () => {
+    dispatch(setLogoutRequest());
+  };
+
   return (
     <nav className="navbar">
       <div className="titulo">
