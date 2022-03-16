@@ -27,9 +27,9 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: rgb(189, 158, 100);
-  border: rgb(189, 158, 100) 2px solid;
+  border: rgb(189, 158, 100) 0 solid;
   border-radius: 5px;
-  padding: 5px;
+  // padding: 5px;
 }
 
 .productos a {
@@ -43,9 +43,9 @@
 
 .productos a:not(.nohover):hover {
   color: rgb(189, 158, 100);
-  border: rgb(189, 158, 100) 2px solid;
+  border: rgb(189, 158, 100) 0 solid;
   border-radius: 5px;
-  padding: 5px;
+  // padding: 5px;
 }
 
 .titulo a {
@@ -69,7 +69,7 @@
   justify-content: center;
   align-items: center;
   flex: 3;
-  margin-left: 7.5rem;
+  margin-left: 3.5rem;
 
   input {
     outline: none;
@@ -101,12 +101,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 0.3;
+  flex: 0.1;
   width: 5rem;
   height: 5rem;
 }
 
-.bg-cart {
+.size-badge {
   background-color: rgb(189, 158, 100);
 }
 
@@ -133,17 +133,19 @@ i {
   margin-top: 0rem;
   background-color: rgb(19, 18, 18);
   font-size: 1em;
+  padding: 0.5rem;
   text-align: center;
 }
 
 .boton-despliegue:hover {
   color: rgb(189, 158, 100);
-  border: rgb(189, 158, 100) 2px solid;
+  border: rgb(189, 158, 100) 2px solid transparent;
   border-radius: 5px;
+
 }
 
 .dropdown-menu {
-  width: 13.7rem;
+  width: 12rem;
   background-color: rgb(19, 18, 18);
   font-size: 1em;
   border-bottom-left-radius: 0.7rem;
@@ -160,3 +162,13 @@ i {
     margin: 0;
   }
 }
+
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 15rem;
+  }
+
+  
+}
+
