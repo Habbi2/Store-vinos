@@ -13,6 +13,10 @@ Products.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    cellar: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     price: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -32,6 +36,9 @@ Products.init(
   },
   {
     sequelize: db,
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false,
     modelName: "products",
   }
 );

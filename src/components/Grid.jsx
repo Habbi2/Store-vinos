@@ -4,6 +4,7 @@ import "../assets/style/grid.scss"
 
 const Grid = () => {
   const productos = useSelector((state) => state.products);
+  console.log(productos)
   
   return (
     <div className="container">

@@ -30,41 +30,41 @@ const NavbarP = () => {
 
 
       <div className="productos">
-        <Link to="/productos">Productos</Link>
+        <Link to="/products">Productos</Link>
         <input
           className="input is-rounded is-info"
           type="search"
           placeholder="Buscar..."
         />
     
-      <div class="btn-group">
+      <div className="btn-group">
         <button
           type="button"
-          class="btn btn-dark dropdown-toggle boton-despliegue is-info"
+          className="btn btn-dark dropdown-toggle boton-despliegue is-info"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           CATEGORIAS
         </button>
-        <ul class="dropdown-menu">
+        <ul className="dropdown-menu">
           <li>
-            <a class="dropdown-item nohover" href="#">
+            <a className="dropdown-item nohover" href="#">
               Tinto
             </a>
           </li>
           <li>
-            <hr class="dropdown-divider" />
+            <hr className="dropdown-divider" />
           </li>
           <li>
-            <a class="dropdown-item nohover" href="#">
+            <a className="dropdown-item nohover" href="#">
               Blanco
             </a>
           </li>
           <li>
-            <hr class="dropdown-divider" />
+            <hr className="dropdown-divider" />
           </li>
           <li>
-            <a class="dropdown-item nohover" href="#">
+            <a className="dropdown-item nohover" href="#">
               Rosado
             </a>
           </li>
@@ -74,9 +74,9 @@ const NavbarP = () => {
       
 
       <div className="carrito">
-        <i class="bi bi-cart4 positio-relative">
-          <span class="position-absolute  translate-middle badge rounded-pill bg-success fs-4 size-badge">
-            1<span class="visually-hidden">unread messages</span>
+        <i className="bi bi-cart4 positio-relative">
+          <span className="position-absolute  translate-middle badge rounded-pill bg-success fs-4 size-badge">
+            1<span className="visually-hidden">unread messages</span>
           </span>
         </i>
       </div>
