@@ -32,8 +32,8 @@ const NavbarP = () => {
         </Link>
       </div>
 
-      <button
-        class="navbar-toggler border border-light"
+       <button
+        class="navbar-toggler border border-light sandwich"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent"
@@ -89,6 +89,8 @@ const NavbarP = () => {
           </ul>
         </div>
       </div>
+      </div>
+
 
       <div className="carrito">
         <i class="bi bi-cart4 positio-relative">
@@ -97,7 +99,7 @@ const NavbarP = () => {
           </span>
         </i>
       </div>
-
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div className="log">
         {user.id ? (
           <div className="form">
