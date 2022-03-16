@@ -1,11 +1,16 @@
 const { DataTypes, Model } = require("sequelize");
 const db = require("../db");
+const bcrypt = require("bcrypt");
+const Cart = require("./Cart")
+const Products = require("./Products")
 
-/* const bcrypt = require("bcrypt");
-} */
 class User extends Model {
-/*   hash(password, salt) {
-    return bcrypt.hash(password, salt); */
+  ass(password, salt) {
+    return bcrypt.hash(password, salt)
+  }
+  hash(password, salt) {
+    return bcrypt.hash(password, salt)
+  }
 }
 
 User.init(
@@ -24,7 +29,7 @@ User.init(
       unique: true,
     },
     phone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     state: {
@@ -35,9 +40,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-/*     salt: {
+    salt: {
       type: DataTypes.STRING,
-    }, */
+    },
   },
   {
     sequelize : db,
@@ -45,11 +50,7 @@ User.init(
   }
 );
 
-
-module.exports = User;
-
-
-/* User.beforeCreate((user) => {
+User.beforeCreate((user) => {
   return bcrypt
     .genSalt(16)
     .then((salt) => {
@@ -60,4 +61,21 @@ module.exports = User;
       user.password = hash;
     });
 });
- */
+
+User.beforeBulkUpdate((user) => {
+  return bcrypt
+    .genSalt(16)
+    .then((salt) => {
+      user.salt = salt;
+      return user.ass(user.password, salt);
+    })
+    .then((hash) => {
+      user.password = hash;
+    });
+});
+
+User.hasMany(Products, {as: "products"})
+
+module.exports = User;
+
+

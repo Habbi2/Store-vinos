@@ -1,34 +1,30 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../style/loginRegister.scss";
-import axios from "axios";
+import "../assets/style/loginRegister.scss";
+import { useDispatch } from "react-redux";
+import { setRegisterRequest } from "../state/user";
 
 const Register = () => {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [usuario, setUsuario] = useState({
+  const [form, setForm] = useState({
     name: "",
     lastname: "",
     email: "",
     phone: "",
     state: "",
     password: "",
-    confirmar: "",
   });
 
   const onChange = (e) => {
-    setUsuario({
-      ...usuario,
-      [e.target.name]: e.target.value,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value});
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("/register", usuario)
-        
-      .then(() => navigate("/Login"));
+    dispatch(setRegisterRequest(form));
+    navigate("/login");
   };
 
   return (
@@ -37,7 +33,7 @@ const Register = () => {
         <h1>Crear un usuario</h1>
         <form onSubmit={onSubmit}>
           <div className="campo-form">
-            <label htmlFor="name">Nombre</label>
+            <label>Nombre</label>
             <input
               type="text"
               id="name"
@@ -48,7 +44,7 @@ const Register = () => {
             ></input>
           </div>
           <div className="campo-form">
-            <label htmlFor="lastname">Apellido</label>
+            <label>Apellido</label>
             <input
               type="text"
               id="lastname"
@@ -60,7 +56,7 @@ const Register = () => {
           </div>
 
           <div className="campo-form">
-            <label htmlFor="email">Email</label>
+            <label>Email</label>
             <input
               type="email"
               id="email"
@@ -71,7 +67,7 @@ const Register = () => {
             ></input>
           </div>
           <div className="campo-form">
-            <label htmlFor="phone">Teléfono</label>
+            <label>Teléfono</label>
             <input
               type="text"
               id="phone"
@@ -82,7 +78,7 @@ const Register = () => {
             ></input>
           </div>
           <div className="campo-form">
-            <label htmlFor="state">Ciudad</label>
+            <label>Ciudad</label>
             <input
               type="text"
               id="state"
@@ -93,23 +89,12 @@ const Register = () => {
             ></input>
           </div>
           <div className="campo-form">
-            <label htmlFor="password">Contraseña</label>
+            <label>Contraseña</label>
             <input
               type="password"
               id="password"
               name="password"
               placeholder="ingrese su contraseña"
-              required
-              onChange={onChange}
-            ></input>
-          </div>
-          <div className="campo-form">
-            <label htmlFor="confirmar">Confirmar Contraseña</label>
-            <input
-              type="password"
-              id="confirmar"
-              name="confirmar"
-              placeholder="repita su contraseña"
               required
               onChange={onChange}
             ></input>

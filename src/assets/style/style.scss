@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Montserrat:wght@300&family=Raleway:wght@300&display=swap');
+@import "./colors.scss";
+@import "./grid.scss";
+@import "./home.scss";
+@import "./loginRegister.scss";
+@import "./navbar.scss";
+
+* {
+  font-family: "Raleway", sans-serif;
+  color: $colorTexto;
+  
+}
+
+/* :root {
+  $headingFont: 'Raleway', sans-serif;
+  $textFont: 'Roboto', sans-serif;
+} */
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  background-color: rgb(236, 236, 236);
+  font-size: 16px;
+  font-size: 1.6rem;
+  
+}
+
+

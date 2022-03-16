@@ -1,38 +1,34 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../style/loginRegister.scss";
-import axios from "axios";
-
+import "../assets/style/loginRegister.scss";
+import { setLoginRequest } from "../state/user";
+import { useDispatch } from "react-redux"
 
 const Login = () => {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [usuario, setUsuario] = useState({
+  const [form, setForm] = useState({
     email: "",
     password: "",
-    
   });
 
   const onChange = (e) => {
-    setUsuario({
-      ...usuario,
-      [e.target.name]: e.target.value,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("/login", usuario)
-        
-      .then(() => navigate("/"));
+    dispatch(setLoginRequest(form));
+    navigate("/");
   };
+
   return (
     <div className="form-usuario">
       <div className="contenedor-form sombra-dark">
         <h1>Iniciar Sesión</h1>
 
-        <form onSubmit={onSubmit}> 
+        <form onSubmit={onSubmit}>
           <div className="campo-form">
             <label htmlFor="email">Email</label>
             <input
