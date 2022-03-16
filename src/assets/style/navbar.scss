@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap');
+
+
 .navbar {
+  font-family: 'Balsamiq Sans', cursive;
   position: fixed;
   z-index: 2;
-  display: flex;
   display: flex;
   justify-content: space-around;
   // align-items: flex-start;
@@ -46,16 +49,19 @@
 }
 
 .titulo a {
+  font-family: 'Caveat', cursive;
   display: flex;
   justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
   font-family: cursive;
   font-size: 0.9em;
-  margin-left: -3rem;
+  margin-left: 1rem;
   color: whitesmoke;
-  width: 250px;
+  width: 240px;
   height: 70px;
+  align-items: center;
+
 }
 
 .productos {

@@ -22,8 +22,8 @@ const NavbarP = () => {
     <nav className="navbar">
       <div className="titulo">
         <Link to="/">
-          <img className="navbar-brand" src={logoCopa} alt="" />
-          Alguien <br /> dijo <br /> Vino?
+          <img className="navbar-brand" src={logoCopa} alt="" style={{width: 50}}/>
+          Alguien dijo Vino?
         </Link>
       </div>
 
@@ -75,7 +75,7 @@ const NavbarP = () => {
 
       <div className="carrito">
         <i class="bi bi-cart4 positio-relative">
-          <span class="position-absolute  translate-middle badge rounded-pill bg-cart fs-4 size-badge">
+          <span class="position-absolute  translate-middle badge rounded-pill bg-success fs-4 size-badge">
             1<span class="visually-hidden">unread messages</span>
           </span>
         </i>
