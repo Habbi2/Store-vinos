@@ -20,6 +20,62 @@ const NavbarP = () => {
 
   return (
     <nav className="navbar navbar-expand-lg">
+<div class="sandwich">
+
+<div class="btn-group">
+          <button 
+            type="button"
+            class="btn btn-dark dropdown-toggle boton-despliegue is-info"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            
+          >
+            {<i class="bi bi-list fs-1 text-light" ></i>}
+          
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                PRODUCTOS
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                CATEGORÍAS
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                BUSCAR
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                LOGIN
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                SING UP
+              </a>
+            </li>
+          </ul>
+        </div>
+      
+      </div>
+
       <div className="titulo">
         <Link to="/">
           <img
@@ -31,21 +87,9 @@ const NavbarP = () => {
           Alguien dijo Vino?
         </Link>
       </div>
+        
 
-       <button
-        class="navbar-toggler border border-light sandwich"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="bi bi-list fs-1 text-light" ></i>
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="container1">
 
       <div className="productos">
         <Link to="/productos">Productos</Link>
@@ -99,7 +143,7 @@ const NavbarP = () => {
           </span>
         </i>
       </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="container1">
       <div className="log">
         {user.id ? (
           <div className="form">
