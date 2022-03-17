@@ -1,83 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap");
 
 .navbar {
-  font-family: 'Balsamiq Sans', cursive;
-  position: fixed;
-  z-index: 2;
+  font-family: "Balsamiq Sans", cursive;
   display: flex;
   justify-content: space-around;
-  // align-items: flex-start;
+  align-items: flex-start;
   background-color: rgb(19, 18, 18);
-  height: 70px;
-  width: 100%;
-  text-decoration: none;
-}
 
-.form a {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-decoration: none;
+.navbar-brand {
+  font-family: "Caveat", cursive;
   text-transform: uppercase;
-  margin: 0 1em;
   color: whitesmoke;
-}
+  }
 
-.form a:hover {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: rgb(189, 158, 100);
-  border: rgb(189, 158, 100) 0 solid;
-  border-radius: 5px;
-  // padding: 5px;
-}
-
-.productos a {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-decoration: none;
-  text-transform: uppercase;
-  margin: 0 1em;
-  color: whitesmoke;
-}
-
-.productos a:not(.nohover):hover {
-  color: rgb(189, 158, 100);
-  border: rgb(189, 158, 100) 0 solid;
-  border-radius: 5px;
-  // padding: 5px;
-}
-
-.titulo a {
-  font-family: 'Caveat', cursive;
+.ul-menu {
   display: flex;
-  justify-content: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: cursive;
-  font-size: 0.9em;
-  margin-left: 1rem;
-  color: whitesmoke;
-  width: 240px;
-  height: 70px;
-  align-items: center;
-
-}
-
-.productos {
-  display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex: 3;
-  margin-left: 3.5rem;
+  margin-left: 9rem;
+
+  a {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    // margin: 0 1em;
+    color: whitesmoke;
+  }
+
+  a:hover {
+    color: rgb(189, 158, 100);
+  }
+
+  .form {
+    display: flex;
+    flex: 0.5;
+  }
+
+  .form a {
+      margin: 1.5rem;
+    }
+  
 
   input {
     outline: none;
     border-radius: 0.5rem;
-    width: 25rem;
-    margin: 0 5rem;
-    padding: 0.4em 0;
-
+    padding-left: 0.4rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1em;
@@ -91,84 +60,61 @@
   input::placeholder {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    // color: whitesmoke;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.12em;
   }
 }
 
-.carrito {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0.1;
-  width: 5rem;
-  height: 5rem;
+.cart {
+  color: whitesmoke;
+  font-size: 2em;
 }
 
-.size-badge {
+.badge {
   background-color: rgb(189, 158, 100);
 }
 
-.log {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-}
-
-i {
-  font-size: 2em;
-  color: whitesmoke;
-}
-
-.btn-group {
-  display: flex;
-  text-align: center;
-}
-
-.boton-despliegue {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin-top: 0rem;
-  background-color: rgb(19, 18, 18);
-  font-size: 1em;
-  padding: 0.5rem;
-  text-align: center;
-}
-
-.boton-despliegue:hover {
-  color: rgb(189, 158, 100);
-  border: rgb(189, 158, 100) 2px solid transparent;
-  border-radius: 5px;
-
-}
 
 .dropdown-menu {
-  width: 12rem;
+  width: 10.5rem;
   background-color: rgb(19, 18, 18);
+  border: none;
   font-size: 1em;
   border-bottom-left-radius: 0.7rem;
   border-bottom-right-radius: 0.7rem;
-  
+
   hr {
     color: rgb(189, 158, 100);
   }
-  
+
   .dropdown-item {
+    color: rgb(189, 158, 100);
+    //     font-weight: bold;
+    //     margin: 0;
+    //   }
+  }
+
+  .dropdown-item:hover {
     background-color: rgb(19, 18, 18);
     color: rgb(189, 158, 100);
-    font-weight: bold;
-    margin: 0;
   }
+  // @media (max-width: 768px) {
+
+  //   .navbar {
+  //     height: 15rem;
+  //   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .ul-menu {
+    margin-left: 0;
+  }
 
-  .navbar {
-    height: 15rem;
+  .ul-menu li {
+    margin-bottom: 1rem;
   }
 
   
-}
 
+}
+}
