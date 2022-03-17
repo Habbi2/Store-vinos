@@ -7,9 +7,9 @@ const User = require("../models/Users");
 const Users = require("../models/Users");
 
 router.post("/add", async function (req, res) {
-  if (!req.user) return res.send("No se encontró el usuario");
+  if (!req.body.users.id) return res.send("No se encontró el usuario");
   const user = await Users.findOne({
-    where: { id: req.user.id },
+    where: { id: req.body.users.id },
     include: { model: Products, as: "products" },
   });
   if (!req.body.id) return res.send("No se encontró el producto");
@@ -19,13 +19,13 @@ router.post("/add", async function (req, res) {
   return res.send("Producto añadido correctamente");
 });
 
-router.get("/get", async function (req, res) {
-  if (!req.user) return res.send("No se encontró el usuario");
+router.post("/get", async function (req, res) {
+  if (!req.body.email) return
   const user = await Users.findOne({
-    where: { id: req.user.id },
+    where: { id: req.body.id },
     include: { model: Products, as: "products" },
   });
-  if (!user) return res.send("No se encontró el usuario");
+  if (!user) return
   return res.send(user.products);
 });
 
