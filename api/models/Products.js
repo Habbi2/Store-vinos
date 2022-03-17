@@ -33,6 +33,10 @@ Products.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    qualification: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     sequelize: db,

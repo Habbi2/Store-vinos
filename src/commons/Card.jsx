@@ -9,7 +9,7 @@ const Card = ({ product }) => {
     navigate(`/products/${product.name}/${product.id}`);
   };
 
-  return (
+return (
 <div className="col-sm">
 <div className="card" style={{ width: "25rem" }} onClick={handleClick}>
     <img src={product.image} className="card-img-top" alt="vino-card" />
