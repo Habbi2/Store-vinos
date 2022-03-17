@@ -11,7 +11,7 @@ const Card = ({ product }) => {
 
   return (
 <div className="col-sm">
-<div className="card" style={{ width: "25rem" }} onClick={handleClick}>
+  <div className="card" style={{ width: "25rem" }} onClick={handleClick}>
     <img src={product.image} className="card-img-top" alt="vino-card" />
     <div className="card-body">
       <h3 className="card-title"><strong>{product.name}</strong></h3>
