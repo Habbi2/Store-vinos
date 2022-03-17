@@ -68,7 +68,7 @@ const Navbar = () => {
             {/*Link de Productos*/}
             <li class="nav-item">
               <Link
-                to="/productos"
+                to="/products"
                 aria-current="page"
                 href="#"
               >
@@ -103,15 +103,15 @@ const Navbar = () => {
                 aria-labelledby="navbarDropdown"
               >
                 <hr class="dropdown-divider"></hr>
-                <Link to="/Tinto" class="dropdown-item">
+                <Link to="/categories/tintos" class="dropdown-item">
                   Tinto
                 </Link>
                 <hr class="dropdown-divider"></hr>
-                <Link to="/Blanco" class="dropdown-item">
+                <Link to="/categories/blancos" class="dropdown-item">
                   Blanco
                 </Link>
                 <hr class="dropdown-divider"></hr>
-                <Link to="/Rosado" class="dropdown-item">
+                <Link to="/categories/rosados" class="dropdown-item">
                   Rosado
                 </Link>
                 <hr class="dropdown-divider"></hr>
