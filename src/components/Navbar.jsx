@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import logoCopa from "../img/logoCopa.png";
 
+import Search from "../commons/Search"
 import { setLogoutRequest, setUserMeRequest } from "../state/user";
 
 const Navbar = () => {
@@ -77,14 +78,7 @@ const Navbar = () => {
             </li>
 
             {/* Input Buscar */}
-            <form class="d-flex d-none d-lg-block w-25 mx-5">
-              <input
-                class="form-control me-md-3 "
-                type="search"
-                placeholder="Buscar..."
-                aria-label="Search"
-              />
-            </form>
+            <Search/>
 
             {/* Dropdown Categorias */}
             <li class="nav-item dropdown">

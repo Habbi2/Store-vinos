@@ -1,1 +1,48 @@
 @import "./colors.scss";
+
+.cuadro{
+    padding-top: 30px;
+}
+
+.cardDetail {
+    margin-bottom: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 0;
+}
+
+.cardDetail .card-title {
+    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.cardDetail .card-subtitle {
+    font-weight: 500;
+    font-size: 2.7rem;
+    margin-bottom: 10px;
+    color: #8898aa;
+}
+
+.cardDetail .card-d {
+    font-weight: 500;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #6f7c8a;
+}
+
+
+.cart{
+    color: white;
+}
+
+.btn-buy{
+    background-color: rgb(189, 158, 100);
+}

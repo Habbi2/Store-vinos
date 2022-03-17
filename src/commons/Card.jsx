@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import {Link} from "react-router-dom"
+import InfoDetails from "./InfoDetails";
 
 const Card = ({ product }) => {
   const navigate = useNavigate();

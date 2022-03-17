@@ -9,6 +9,7 @@ import Grid from "./components/Grid";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Register from "./components/Register";
+import InfoDetails from "./commons/InfoDetails";
 import { setProducts, setTintos, setBlancos, setRosados } from "./state/products";
 
 
@@ -16,6 +17,7 @@ function App() {
   const dispatch = useDispatch();
 
   const productos = useSelector((state) => state.products);
+  const search = useSelector((state) => state.search)
 
   const [tintos , setTintos] = useState([])
   const [blancos , setBlancos] = useState([])
@@ -55,7 +57,8 @@ function App() {
         <Route path={`/categories/rosados`} element={<Grid vinos={rosados}/>} />
 
 
-        <Route path="/products/:name" element={<div>hola</div>} />
+        <Route path="/vinos/:keyword" element={<Grid vinos={search}/>} />
+        <Route path="/products/:name" element={<InfoDetails/>}/>
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
