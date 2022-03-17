@@ -3,15 +3,14 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 const InfoDetails = () => {
-  const { name } = useParams();
+  const { name, id } = useParams();
   const [contenido, setContenido] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/api/products/find/${name}`).then(({ data }) => {
-
+    axios.get(`http://localhost:3001/api/products/find/${name}/${id}`).then(({ data }) => {
       setContenido(data);
     });
-  }, [name]);
+  }, [name,id]);
 
   return (
     <div class="container cuadro">

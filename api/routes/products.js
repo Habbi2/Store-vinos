@@ -36,8 +36,8 @@ router.post("/add", (req, res) => {
   });
 });
 
-router.get("/find/:name", (req, res) => {
-  Products.findOne({ where: { name: req.params.name } }).then((product) => {
+router.get("/find/:name/:id", (req, res) => {
+  Products.findOne({ where: { name: req.params.name, id: req.params.id} }).then((product) => {
     res.status(200).send(product);
   });
 });

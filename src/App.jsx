@@ -58,7 +58,7 @@ function App() {
 
 
         <Route path="/vinos/:keyword" element={<Grid vinos={search}/>} />
-        <Route path="/products/:name" element={<InfoDetails/>}/>
+        <Route path="/products/:name/:id" element={<InfoDetails/>}/>
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
