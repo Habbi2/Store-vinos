@@ -35,12 +35,16 @@
     "volleyball": "^1.5.1",
     "web-vitals": "^2.1.4"
   },
+
+  
   "scripts": {
-    "postinstall": "createdb storevinos",
+    "postinstall":"createdb storevinos"  ,
     "server": "nodemon api/server.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
-    "start": "concurrently 'npm run server' 'npm run client'"
+    "prestart": "npm run seed",
+    "seed": "sudo -u postgres psql -d storevinos -a -f api/storevinos.sql",
+    "start": "concurrently 'npm run server' 'npm run client' "
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {

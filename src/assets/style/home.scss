@@ -4,7 +4,9 @@
     padding-top: 7%;
     margin: 0 0 3% 14.5%; 
     width: 70%;
-}
+        @media screen and (max-width: 992px) {
+          display: none;}
+      }
 
 .PopularCard{
     margin-left: 3.5%;
@@ -12,4 +14,13 @@
 
 .homeCard:hover{
     opacity:0.75
+}
+
+.col-sm {
+    display: flex;
+    @media screen and (max-width: 992px) {
+    width: 90%;
+    height: auto;
+    justify-content: center;
+    }
 }

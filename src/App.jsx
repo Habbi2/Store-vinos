@@ -6,19 +6,40 @@ import axios from "axios";
 
 import Navbar from "./components/Navbar"
 import Grid from "./components/Grid";
-import Product from "./components/Product";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Register from "./components/Register";
-import { setProducts } from "./state/products";
-import {products} from "./dbProducts";
+import { setProducts, setTintos, setBlancos, setRosados } from "./state/products";
 
 
 function App() {
   const dispatch = useDispatch();
 
+  const productos = useSelector((state) => state.products);
+
+  const [tintos , setTintos] = useState([])
+  const [blancos , setBlancos] = useState([])
+  const [rosados , setRosados] = useState([])
+
   useEffect(() => {
-    dispatch(setProducts(products));
+    
+    axios.get("/api/products/all").then(({ data }) => {
+      const sortProducts = data.sort(()=> Math.random() - 0.5);
+      dispatch(setProducts(sortProducts));
+    });
+
+    axios.get("/api/products/list/tinto").then(({ data }) => {
+      setTintos(data);
+    });
+
+    axios.get("/api/products/list/blanco").then(({ data }) => {
+      setBlancos(data);
+    });
+    
+    axios.get("/api/products/list/rosado").then(({ data }) => {
+      setRosados(data);
+    });
+
   }, [dispatch]);
 
   return (
@@ -26,8 +47,16 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/productos" element={<Grid />} />
-        <Route path="/products/:id" element={<Product />} />
+
+        <Route path="/products" element={<Grid vinos={productos}/>} />
+
+        <Route path={`/categories/tintos`} element={<Grid vinos={tintos}/>} />
+        <Route path={`/categories/blancos`} element={<Grid vinos={blancos}/>} />
+        <Route path={`/categories/rosados`} element={<Grid vinos={rosados}/>} />
+
+
+        <Route path="/products/:name" element={<div>hola</div>} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
