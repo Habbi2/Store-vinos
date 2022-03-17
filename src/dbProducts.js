@@ -258,3 +258,12 @@ export const productsrosado = [
         image: "https://cdn.shopify.com/s/files/1/0402/2475/1766/products/VINOROSADOELCOTO750MLLACASTELLANAVINOSYLICORESSADECV_400x.jpg?v=1641255711",
     },
 ];
+
+
+
+
+
+
+    
+    
+
