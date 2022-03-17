@@ -1,7 +1,9 @@
 @import "./colors.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@200&display=swap');
+
 .homeFotos{
-    padding-top: 7%;
+    padding-top: 1%;
     margin: 0 0 3% 14.5%; 
     width: 70%;
         @media screen and (max-width: 992px) {
@@ -12,10 +14,6 @@
     margin-left: 3.5%;
 }
 
-.homeCard:hover{
-    opacity:0.75
-}
-
 .col-sm {
     display: flex;
     @media screen and (max-width: 992px) {
@@ -23,4 +21,25 @@
     height: auto;
     justify-content: center;
     }
+}
+
+.fraseTitulo{
+    font-weight: 500;
+    font-size: 4rem;
+    font-family: 'Smooch Sans', sans-serif;
+    padding-top: 3%;
+    color: #8a846f;
+    
+    span{
+        font-weight: 500;
+        font-size: 3rem;
+        color: #8a846f;
+    }
+}
+
+.destacados{
+    font-weight: 600;
+    font-size: 4rem;
+    font-family: 'Smooch Sans', sans-serif;
+    color: #8a846f;
 }

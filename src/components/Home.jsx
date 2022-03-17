@@ -3,10 +3,14 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel'
 import carrusel1 from "../img/carrusel1.png"
 import carrusel2 from "../img/carrusel2.png"
+import carrusel3 from "../img/carrusel3.png"
 
 const Home = () => {
   return (
 <div className="container" style={{paddingBottom : '2%'}}>
+
+      <h2 className="fraseTitulo">El que al mundo vino y no toma vino,<span> ¿A QUE VINO?</span></h2>
+
       <div className="homeFotos">
       <Carousel fade>
   <Carousel.Item>
@@ -15,10 +19,6 @@ const Home = () => {
       src={carrusel1}
       alt="First slide"
     />
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
@@ -26,21 +26,23 @@ const Home = () => {
       src={carrusel2}
       alt="Second slide"
     />
-
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={carrusel3}
+      alt="Second slide"
+    />
   </Carousel.Item>
 </Carousel>
       </div>
 
-      <div className="container">
-        <h2>PRODUCTOS DESTACADOS</h2>
+      <div className="container fondo ">
+        <h2 className="destacados">PRODUCTOS DESTACADOS</h2>
         <div className="row PopularCard">
           <div className="col-sm">
-            <div className="card" style={{ width: "25rem" }}>
-              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top homeCard" alt="..." />
+            <div className="card shadow" style={{ width: "25rem" }}>
+              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top hover" alt="..." />
               <div className="card-body">
                 <h3 className="card-title">Moda' Montepulciano d'Abruzzo</h3>
                 <p className="card-text">
@@ -50,8 +52,8 @@ const Home = () => {
             </div>
           </div>
           <div className="col-sm">
-            <div className="card" style={{ width: "25rem" }}>
-              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top homeCard" alt="..." />
+            <div className="card shadow" style={{ width: "25rem" }}>
+              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top hover" alt="..." />
               <div className="card-body">
                 <h3 className="card-title">Moda' Montepulciano d'Abruzzo</h3>
                 <p className="card-text">
@@ -61,8 +63,8 @@ const Home = () => {
             </div>
           </div>
           <div className="col-sm">
-            <div className="card" style={{ width: "25rem" }}>
-              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top homeCard" alt="..." />
+            <div className="card shadow" style={{ width: "25rem" }}>
+              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top hover" alt="..." />
               <div className="card-body">
                 <h3 className="card-title">Moda' Montepulciano d'Abruzzo</h3>
                 <p className="card-text">
@@ -72,8 +74,8 @@ const Home = () => {
             </div>
           </div>
           <div className="col-sm">
-            <div className="card" style={{ width: "25rem" }}>
-              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top homeCard" alt="..." />
+            <div className="card shadow" style={{ width: "25rem" }}>
+              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top hover" alt="..." />
               <div className="card-body">
                 <h3 className="card-title">Moda' Montepulciano d'Abruzzo</h3>
                 <p className="card-text">

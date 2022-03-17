@@ -20,11 +20,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
+    <nav className="navbar sticky-top navbar-expand-lg navbar-dark">
+      <div className="container-fluid">
         {/* Sandwich */}
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -32,11 +32,11 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Imagen y Titulo */}
-        <Link to="/" class="navbar-brand fs-2 ms-5">
+        <Link to="/" className="navbar-brand fs-2 ms-5">
           <img
             src={logoCopa}
             alt="Logo"
@@ -47,16 +47,16 @@ const Navbar = () => {
         </Link>
 
         {/*Link de Carrito*/}
-        <div class="d-flex order-lg-3">
-          <li class="nav-item d-flex mx-5 my-2">
-            <Link to="/Cart" class="nav-link" aria-current="page" href="#">
-              <i class="bi bi-cart4 positio-relative cart">
+        <div className="d-flex order-lg-3">
+          <li className="nav-item d-flex mx-5 my-2">
+            <Link to="/Cart" className="nav-link" aria-current="page" href="#">
+              <i className="bi bi-cart4 positio-relative cart">
                 <span
-                  class="position-absolute
+                  className="position-absolute
                   
                  translate-middle badge rounded-pill fs-4"
                 >
-                  1<span class="visually-hidden">unread messages</span>
+                  1<span className="visually-hidden">unread messages</span>
                 </span>
               </i>
             </Link>
@@ -64,10 +64,10 @@ const Navbar = () => {
         </div>
 
         {/* Menu */}
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto text-center mb-2 mb-lg-0 ul-menu">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto text-center mb-2 mb-lg-0 ul-menu">
             {/*Link de Productos*/}
-            <li class="nav-item">
+            <li className="nav-item">
               <Link
                 to="/products"
                 aria-current="page"
@@ -81,9 +81,9 @@ const Navbar = () => {
             <Search/>
 
             {/* Dropdown Categorias */}
-            <li class="nav-item dropdown">
+            <li className="nav-item dropdown">
               <a
-                class="dropdown-toggle"
+                className="dropdown-toggle"
                 href="index.html"
                 id="navbarDropdown"
                 role="button"
@@ -93,27 +93,27 @@ const Navbar = () => {
                 Categorias
               </a>
               <ul
-                class="dropdown-menu text-center"
+                className="dropdown-menu text-center"
                 aria-labelledby="navbarDropdown"
               >
-                <hr class="dropdown-divider"></hr>
-                <Link to="/categories/tintos" class="dropdown-item">
+                <hr className="dropdown-divider"></hr>
+                <Link to="/categories/Tinto" className="dropdown-item">
                   Tinto
                 </Link>
-                <hr class="dropdown-divider"></hr>
-                <Link to="/categories/blancos" class="dropdown-item">
+                <hr className="dropdown-divider"></hr>
+                <Link to="/categories/Blanco" className="dropdown-item">
                   Blanco
                 </Link>
-                <hr class="dropdown-divider"></hr>
-                <Link to="/categories/rosados" class="dropdown-item">
+                <hr className="dropdown-divider"></hr>
+                <Link to="/categories/Rosado" className="dropdown-item">
                   Rosado
                 </Link>
-                <hr class="dropdown-divider"></hr>
+                <hr className="dropdown-divider"></hr>
               </ul>
             </li>
 
             {/* Login */}
-            <li class="nav-item">
+            <li className="nav-item">
               <div className="login">
                 {user.id ? (
                   <div className="form">
