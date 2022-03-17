@@ -46,13 +46,7 @@ const InfoDetails = () => {
               <h3 class="box-title mt-5">VALORACION</h3>
               <ul class="list-unstyled">
                 <li>
-                  <i class="fa fa-check text-success"></i>muy bueno
-                </li>
-                <li>
-                  <i class="fa fa-check text-success"></i>pega como coto
-                </li>
-                <li>
-                  <i class="fa fa-check text-success"></i>muy bueno
+                  {contenido.qualification}★ / 5★
                 </li>
               </ul>
             </div>
