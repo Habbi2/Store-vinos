@@ -35,48 +35,48 @@ const Home = () => {
 </Carousel>
       </div>
 
-      <div class="container">
+      <div className="container">
         <h2>PRODUCTOS DESTACADOS</h2>
-        <div class="row PopularCard">
-          <div class="col-sm">
-            <div class="card" style={{ width: "25rem" }}>
-              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="card-img-top homeCard" alt="..." />
-              <div class="card-body">
-                <h3 class="card-title">Moda' Montepulciano d'Abruzzo</h3>
-                <p class="card-text">
+        <div className="row PopularCard">
+          <div className="col-sm">
+            <div className="card" style={{ width: "25rem" }}>
+              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top homeCard" alt="..." />
+              <div className="card-body">
+                <h3 className="card-title">Moda' Montepulciano d'Abruzzo</h3>
+                <p className="card-text">
                   <strong>$3,699.00</strong>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-sm">
-            <div class="card" style={{ width: "25rem" }}>
-              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="card-img-top homeCard" alt="..." />
-              <div class="card-body">
-                <h3 class="card-title">Moda' Montepulciano d'Abruzzo</h3>
-                <p class="card-text">
+          <div className="col-sm">
+            <div className="card" style={{ width: "25rem" }}>
+              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top homeCard" alt="..." />
+              <div className="card-body">
+                <h3 className="card-title">Moda' Montepulciano d'Abruzzo</h3>
+                <p className="card-text">
                   <strong>$3,699.00</strong>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-sm">
-            <div class="card" style={{ width: "25rem" }}>
-              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="card-img-top homeCard" alt="..." />
-              <div class="card-body">
-                <h3 class="card-title">Moda' Montepulciano d'Abruzzo</h3>
-                <p class="card-text">
+          <div className="col-sm">
+            <div className="card" style={{ width: "25rem" }}>
+              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top homeCard" alt="..." />
+              <div className="card-body">
+                <h3 className="card-title">Moda' Montepulciano d'Abruzzo</h3>
+                <p className="card-text">
                   <strong>$3,699.00</strong>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-sm">
-            <div class="card" style={{ width: "25rem" }}>
-              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="card-img-top homeCard" alt="..." />
-              <div class="card-body">
-                <h3 class="card-title">Moda' Montepulciano d'Abruzzo</h3>
-                <p class="card-text">
+          <div className="col-sm">
+            <div className="card" style={{ width: "25rem" }}>
+              <img src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" className="card-img-top homeCard" alt="..." />
+              <div className="card-body">
+                <h3 className="card-title">Moda' Montepulciano d'Abruzzo</h3>
+                <p className="card-text">
                   <strong>$3,699.00</strong>
                 </p>
               </div>

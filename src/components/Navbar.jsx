@@ -5,7 +5,7 @@ import logoCopa from "../img/logoCopa.png";
 
 import { setLogoutRequest, setUserMeRequest } from "../state/user";
 
-const NavbarP = () => {
+const Navbar = () => {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.users);
@@ -19,7 +19,59 @@ const NavbarP = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className="navbar">
+      <div class="sandwich">
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-dark dropdown-toggle boton-despliegue is-info"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {<i class="bi bi-list fs-1 text-light"></i>}
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                PRODUCTOS
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                CATEGORÍAS
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                BUSCAR
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                LOGIN
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item nohover" href="#">
+                SING UP
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div className="titulo">
         <Link to="/">
           <img
@@ -32,65 +84,50 @@ const NavbarP = () => {
         </Link>
       </div>
 
-       <button
-        class="navbar-toggler border border-light sandwich"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="bi bi-list fs-1 text-light" ></i>
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="container1">
+        <div className="productos">
+          <Link to="/products">Productos</Link>
+          <input
+            className="input is-rounded is-info"
+            type="search"
+            placeholder="Buscar..."
+          />
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <div className="productos">
-        <Link to="/productos">Productos</Link>
-        <input
-          className="input is-rounded is-info"
-          type="search"
-          placeholder="Buscar..."
-        />
-
-        <div class="btn-group">
-          <button
-            type="button"
-            class="btn btn-dark dropdown-toggle boton-despliegue is-info"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            CATEGORIAS
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item nohover" href="#">
-                Tinto
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li>
-              <a class="dropdown-item nohover" href="#">
-                Blanco
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li>
-              <a class="dropdown-item nohover" href="#">
-                Rosado
-              </a>
-            </li>
-          </ul>
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn btn-dark dropdown-toggle boton-despliegue is-info"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              CATEGORIAS
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <Link class="dropdown-item nohover" to="/categories/tintos">
+                  Tinto
+                </Link>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <Link class="dropdown-item nohover" to="/categories/blancos">
+                  Blanco
+                </Link>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <Link class="dropdown-item nohover" to="/categories/rosados">
+                  Rosado
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      </div>
-
 
       <div className="carrito">
         <i class="bi bi-cart4 positio-relative">
@@ -99,25 +136,25 @@ const NavbarP = () => {
           </span>
         </i>
       </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div className="log">
-        {user.id ? (
-          <div className="form">
-            <Link to="/">{user.name}</Link>
-            <Link to="/" onClick={logoutButton}>
-              LogOut
-            </Link>
-          </div>
-        ) : (
-          <div className="form">
-            <Link to="/login">Login</Link>
-            <Link to="/register">Sing up</Link>
-          </div>
-        )}
-      </div>
+      <div class="container1">
+        <div className="log">
+          {user.id ? (
+            <div className="form">
+              <Link to="/">{user.name}</Link>
+              <Link to="/" onClick={logoutButton}>
+                LogOut
+              </Link>
+            </div>
+          ) : (
+            <div className="form">
+              <Link to="/login">Login</Link>
+              <Link to="/register">Sing up</Link>
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );
 };
 
-export default NavbarP;
+export default Navbar;

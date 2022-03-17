@@ -5,22 +5,22 @@ const Card = ({ product }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/products/${product.id}`);
+    navigate(`/products/${product.name}`);
   };
 
   return (
-<div class="col-sm">
-<div class="card" style={{ width: "25rem" }} onClick={handleClick}>
-    <img src={product.image} class="card-img-top" alt="vino-card" />
-    <div class="card-body">
-      <h3 class="card-title"><strong>{product.name}</strong></h3>
-      <h3 class="card-subtitle mb-2 text-muted">{product.cellar}</h3>
-      <p class="card-text">
+<div className="col-sm">
+<div className="card" style={{ width: "25rem" }} onClick={handleClick}>
+    <img src={product.image} className="card-img-top" alt="vino-card" />
+    <div className="card-body">
+      <h3 className="card-title"><strong>{product.name}</strong></h3>
+      <h3 className="card-subtitle mb-2 text-muted">{product.cellar}</h3>
+      <p className="card-text">
         <strong>${product.price}.00</strong>
       </p>
 
       <div style={{textAlign: 'center'}}>
-      <button type="button" class="btn btn-dark" >Añadir al carrito</button>
+      <button type="button" className="btn btn-dark" >Añadir al carrito</button>
       </div>
 
     </div>
