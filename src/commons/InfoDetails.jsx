@@ -7,10 +7,12 @@ const InfoDetails = () => {
   const [contenido, setContenido] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/api/products/find/${name}/${id}`).then(({ data }) => {
-      setContenido(data);
-    });
-  }, [name,id]);
+    axios
+      .get(`http://localhost:3001/api/products/find/${name}`)
+      .then(({ data }) => {
+        setContenido(data);
+      });
+  }, [name]);
 
   return (
     <div class="container cuadro">
