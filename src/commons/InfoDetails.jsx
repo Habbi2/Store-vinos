@@ -44,7 +44,7 @@ const InfoDetails = () => {
                 <strong>COMPRAR</strong>
               </button>
               <h3 className="box-title mt-5">VALORACION</h3>
-              {/* <ul class="list-unstyled">
+              <ul class="list-unstyled">
                 <li>
                   <i class="fa fa-check text-success"></i>muy bueno
                 </li>
@@ -54,21 +54,8 @@ const InfoDetails = () => {
                 <li>
                   <i class="fa fa-check text-success"></i>muy bueno
                 </li>
-              </ul> */}
-              <form>
-                <p class="clasificacion">
-                <input id="radio1" type="radio" name="estrellas" value="5"/>
-                <label for="radio1">★</label>
-                <input id="radio2" type="radio" name="estrellas" value="4"></input>
-                <label for="radio2">★</label>
-                <input id="radio3" type="radio" name="estrellas" value="3"></input>
-                <label for="radio3">★</label>
-                <input id="radio4" type="radio" name="estrellas" value="2"></input>
-                <label for="radio4">★</label>
-                <input id="radio5" type="radio" name="estrellas" value="1"></input>
-                <label for="radio5">★</label>
-                </p>
-              </form>
+              </ul>
+
             </div>
           </div>
         </div>
