@@ -12,6 +12,7 @@ import Register from "./components/Register";
 import Footer from "./components/Footer";
 import InfoDetails from "./commons/InfoDetails";
 import NotFound from "./components/NotFound";
+import Checkout from "./commons/Checkout";
 
 import {
   setProducts,
@@ -57,7 +58,7 @@ function App() {
         <Route path="/vinos/:elemento" element={<NotFound />} />
         <Route path="/products/:elemento" element={<NotFound />} />
 
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home vinos={productos} />} />
 
         <Route path="/products" element={<Grid vinos={productos} />} />
 
@@ -76,6 +77,7 @@ function App() {
 
         <Route path="/vinos/:keyword" element={<Grid vinos={search} />} />
         <Route path="/products/:name/:id" element={<InfoDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
