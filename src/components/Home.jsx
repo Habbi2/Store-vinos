@@ -14,7 +14,6 @@ const Home = () => {
   
   useEffect(() => {
     axios.get("/api/cart/get").then(({ data }) => {
-      console.log("AAAAAAAAAAA",data)
       dispatch(setCart(data))
     });
   }, [dispatch]);

@@ -10,8 +10,6 @@ import { setSearch } from "../state/search";
 const Search = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-/*   const productsFind = useSelector((state) => state.products)
-  console.log(productsFind) */
 
   const [keyword, setKeyword] = useState("");
 

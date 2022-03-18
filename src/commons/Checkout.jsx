@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export default function Checkout({lista}) {
   const total = lista.map((value) => value.price * value.quantity).reduce((sum, a) => sum + a, 0);
-  console.log("asdas",total)
   return (
     <div><div className="container" style={{height: '65vh'}}>
     <h1 className="h3 mb-5" style={{marginTop: '100px'}}><strong>Finaliza tu compra</strong></h1>

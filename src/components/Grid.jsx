@@ -5,7 +5,6 @@ import "../assets/style/grid.scss";
 
 const Grid = ({ vinos }) => {
   const path = useLocation().pathname
-  console.log(path)
   return (
     <div className="container">
       {vinos.length > 0 ? (
