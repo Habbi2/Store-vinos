@@ -6,7 +6,7 @@ import logoCopa from "../img/logoCopa.png";
 import Search from "../commons/Search"
 import { setLogoutRequest, setUserMeRequest } from "../state/user";
 
-const Navbar = () => {
+const Footer = () => {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.users);
@@ -139,4 +139,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Footer;

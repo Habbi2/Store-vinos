@@ -9,6 +9,7 @@ import Grid from "./components/Grid";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Register from "./components/Register";
+import Footer from "./components/Footer";
 import InfoDetails from "./commons/InfoDetails";
 import { setProducts, setTintos, setBlancos, setRosados } from "./state/products";
 
@@ -58,11 +59,12 @@ function App() {
 
 
         <Route path="/vinos/:keyword" element={<Grid vinos={search}/>} />
-        <Route path="/products/:name" element={<InfoDetails/>}/>
+        <Route path="/products/:name/:id" element={<InfoDetails/>}/>
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

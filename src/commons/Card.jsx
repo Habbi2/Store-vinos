@@ -6,10 +6,10 @@ const Card = ({ product }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/products/${product.name}`);
+    navigate(`/products/${product.name}/${product.id}`);
   };
 
-  return (
+return (
 <div className="col-sm">
   <div className="card" style={{ width: "25rem" }} onClick={handleClick}>
     <img src={product.image} className="card-img-top" alt="vino-card" />
