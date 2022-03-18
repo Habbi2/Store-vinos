@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState} from "react";
+
+import Search from "../commons/Search";
+import Cart from "../commons/Cart";
 import logoCopa from "../img/logoCopa.png";
 
-import Search from "../commons/Search"
 import { setLogoutRequest, setUserMeRequest } from "../state/user";
 
 const Footer = () => {
   const dispatch = useDispatch();
-
+  const [collapsed, setCollapsed] = useState({ collapsed: false });
   const user = useSelector((state) => state.users);
 
   useEffect(() => {
@@ -17,6 +19,10 @@ const Footer = () => {
 
   const logoutButton = () => {
     dispatch(setLogoutRequest());
+  };
+
+  const handleChange = () => {
+    setCollapsed({ collapsed: !collapsed.collapsed });
   };
 
   return (
@@ -47,19 +53,20 @@ const Footer = () => {
         </Link>
 
         {/*Link de Carrito*/}
-        <div className="d-flex order-lg-3">
-          <li className="nav-item d-flex mx-5 my-2">
-            <Link to="/Cart" className="nav-link" aria-current="page" href="#">
-              <i className="bi bi-cart4 positio-relative cart">
+        <div class="d-flex order-lg-3">
+          <li class="nav-item d-flex mx-5 my-2">
+            <div onClick={handleChange}>
+              <i class="bi bi-cart4 positio-relative cart">
                 <span
-                  className="position-absolute
-                  
+                  class="position-absolute
+
                  translate-middle badge rounded-pill fs-4"
                 >
-                  1<span className="visually-hidden">unread messages</span>
+                  1<span class="visually-hidden">unread messages</span>
                 </span>
               </i>
-            </Link>
+            </div>
+            {collapsed.collapsed ? <Cart></Cart> : <></>}
           </li>
         </div>
 
