@@ -10,7 +10,7 @@ const Grid = ({vinos}) => {
     <div className="container">
       <h2 className="tituloCategorias">
         {
-          products ? "Nuestra carta de productos para vos." : vinos[1].breed === "Tinto" ? "Nuesta seleccion de tintos." : vinos[1].breed === "Blanco" ? "Nuesta seleccion de blancos." :  vinos[1].breed === "Rosado" ? "Nuesta seleccion de rosados." : null
+          products ? "Nuestra carta de productos para vos" : vinos[1].breed === "Tinto" ? "Nuestra seleccion de tintos" : vinos[1].breed === "Blanco" ? "Nuestra seleccion de blancos" :  vinos[1].breed === "Rosado" ? "Nuestra seleccion de rosados" : null
         }
       </h2>
       <div className="row grid">

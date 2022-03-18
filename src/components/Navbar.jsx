@@ -125,7 +125,7 @@ const Navbar = () => {
                 ) : (
                   <div className="form">
                     <Link to="/login">Login</Link>
-                    <Link to="/register">Sing up</Link>
+                    <Link to="/register">Sign up</Link>
                   </div>
                 )}
               </div>
