@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 
-export default function Checkout() {
+export default function Checkout({lista}) {
+  const total = lista.map((value) => value.price * value.quantity).reduce((sum, a) => sum + a, 0);
+  console.log("asdas",total)
   return (
-    <div><div className="container">
-    <h1 className="h3 mb-5">Payment</h1>
+    <div><div className="container" style={{height: '65vh'}}>
+    <h1 className="h3 mb-5" style={{marginTop: '100px'}}><strong>Finaliza tu compra</strong></h1>
     <div className="row">
       <div className="col-lg-9">
         <div className="accordion" id="accordionPayment">
@@ -90,17 +93,14 @@ export default function Checkout() {
           <div className="p-3 bg-light bg-opacity-10">
             <h6 className="card-title mb-3">Order Summary</h6>
             <div className="d-flex justify-content-between mb-1 small">
-              <span>Subtotal</span> <span>$214.50</span>
+              <span>Subtotal</span> <span>${total},00</span>
             </div>
             <div className="d-flex justify-content-between mb-1 small">
-              <span>Shipping</span> <span>$20.00</span>
-            </div>
-            <div className="d-flex justify-content-between mb-1 small">
-              <span>Coupon (Code: NEWYEAR)</span> <span className="text-danger">-$10.00</span>
+              <span>Envio</span> <span>$300.00</span>
             </div>
             <hr/>
             <div className="d-flex justify-content-between mb-4 small">
-              <span>TOTAL</span> <strong className="text-dark">$224.50</strong>
+              <span>TOTAL</span> <strong className="text-dark">${total + 500},00</strong>
             </div>
             <div className="form-check mb-1 small">
               <input className="form-check-input" type="checkbox" value="" id="tnc"/>
@@ -114,7 +114,9 @@ export default function Checkout() {
               Si quiere recibir emails de manera periódica con noticias y actualizaciones sobre nuestro sitio  <a href="#"></a>
               </label>
             </div>
+            <Link to="/done">
             <button className="btn btn-primary w-100 mt-2">Finalizar Compra</button>
+            </Link>
           </div>
         </div>
       </div>

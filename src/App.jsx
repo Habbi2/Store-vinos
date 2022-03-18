@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 import InfoDetails from "./commons/InfoDetails";
+import Done from "./commons/Done";
 import NotFound from "./components/NotFound";
 import Checkout from "./commons/Checkout";
 
@@ -30,6 +31,8 @@ function App() {
   const [tintos, setTintos] = useState([]);
   const [blancos, setBlancos] = useState([]);
   const [rosados, setRosados] = useState([]);
+
+  const carrito = useSelector((state) => state.cart)
 
   useEffect(() => {
     axios.get("/api/products/all").then(({ data }) => {
@@ -57,8 +60,11 @@ function App() {
         <Route path="/:notfound" element={<NotFound />} />
         <Route path="/vinos/:elemento" element={<NotFound />} />
         <Route path="/products/:elemento" element={<NotFound />} />
+        <Route path="/categories/:elemento" element={<NotFound />} />
 
         <Route path="/" element={<Home vinos={productos} />} />
+
+        <Route path="/checkout" element={<Checkout lista={carrito} />} />
 
         <Route path="/products" element={<Grid vinos={productos} />} />
 
@@ -78,6 +84,7 @@ function App() {
         <Route path="/vinos/:keyword" element={<Grid vinos={search} />} />
         <Route path="/products/:name/:id" element={<InfoDetails />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/done" element={<Done />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

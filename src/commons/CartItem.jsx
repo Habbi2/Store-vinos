@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { setCart, setDeleteCart } from "../state/cart";
+import { setCart, setDeleteCart, setEditCart } from "../state/cart";
 import { useDispatch } from "react-redux";
 
 const CartItem = ({ product }) => {
@@ -21,6 +21,12 @@ const CartItem = ({ product }) => {
     dispatch(setDeleteCart({id : id}))
     axios.get("/api/cart/get").then(({data}) => dispatch(setCart(data)));
   };
+
+  const handleEdit = () => {
+    dispatch(setEditCart({id : id, quantity: count}))
+    axios.get("/api/cart/get").then(({data}) => dispatch(setCart(data)));
+  }
+  
   return (
     <div className="cart-item">
       <div className="media">
@@ -34,22 +40,21 @@ const CartItem = ({ product }) => {
         <div>
           <p>{name}</p>
           <p>{quantity}</p>
-          <p>{price + " $ "}</p>
+          <p>{" $ " + price}</p>
         </div>
       </div>
       {!show.collapsed ? (
-        <button onClick={handleChange}>Editar</button>
+        <button onClick={handleChange} className="btn btn-rounded btn-buy">EDITAR</button>
       ) : (
         <div className="edit">
           <div className="edit-info">
-            <h3 onClick={() => handleCount("substract")}>-</h3>
-            <h3>{count}</h3>
-            <h3 onClick={() => handleCount("add")}>+</h3>
+            <h3 className="text-white" onClick={() => handleCount("substract")}>-</h3>
+            <h3 className="text-white">{count}</h3>
+            <h3 className="text-white" onClick={() => handleCount("add")}>+</h3>
           </div>
           <div className="edit-buttons">
-            <button>back</button>
-            <button>change</button>
-            <button onClick={handleDelete}>delete</button>
+            <button className="btn btn-rounded btn-buy" onClick={handleEdit}>CAMBIAR</button>
+            <button className="btn btn-rounded btn-buy" onClick={handleDelete}>ELIMINAR</button>
           </div>
         </div>
       )}

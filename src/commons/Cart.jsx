@@ -2,6 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import CartItem from "./CartItem";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -13,7 +14,7 @@ function Cart() {
 
 
   const total = products
-    .map((value) => value.price)
+    .map((value) => value.price * value.quantity)
     .reduce((sum, a) => sum + a, 0);
   const handleChange = () => {
     setShow({ collapsed: !show.collapsed });
@@ -21,8 +22,8 @@ function Cart() {
 
   return (
     <div className="cart-accordion">
-      <Container style={{ width: 235 }}>
-        <p onClick={handleChange}>Show items</p>
+      <Container>
+        <p onClick={handleChange}><button className="btn btn-rounded btn-buy"><strong>MOSTRAR ITEMS</strong> </button></p>
         {show.collapsed ? (
           products.map((value, index) => {
             return (
@@ -37,14 +38,17 @@ function Cart() {
         <hr />
         <Row>
           <Col xs={6}>
-            <h3>Total:</h3>
+            <h3 className="text-white">Total:</h3>
           </Col>
           <Col xs={6}>
-            <h3>{total}</h3>
+            <h3 className="text-white">{"$" + total}</h3>
           </Col>
         </Row>
         <br />
       </Container>
+      <Link to="/checkout">
+      <button className="btn btn-rounded btn-buy ms-5 mb-5">COMPRAR</button>
+      </Link>
     </div>
   );
 }

@@ -1,20 +1,29 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 import Search from "../commons/Search";
 import Cart from "../commons/Cart";
 import logoCopa from "../img/logoCopa.png";
-import Carrito from "../commons/Carrito";
-
+import { setCart } from "../state/cart";
 import { setLogoutRequest, setUserMeRequest } from "../state/user";
 import axios from "axios";
 
 const Footer = () => {
   const dispatch = useDispatch();
+  const [collapsed, setCollapsed] = useState({ collapsed: false });
+  const productsLength = useSelector((state) => state.cart).length;
+
+  useEffect(() => {
+    axios.get("/api/cart/get").then(({ data }) => dispatch(setCart(data)));
+  }, [dispatch]);
+
+  const handleChange = () => {
+    setCollapsed({ collapsed: !collapsed.collapsed });
+  };
 
   const user = useSelector((state) => state.users);
-  
+
   useEffect(() => {
     dispatch(setUserMeRequest());
   }, [dispatch]);
@@ -50,26 +59,40 @@ const Footer = () => {
         </Link>
 
         {/*Link de Carrito*/}
-        {
-          user.id ? <Carrito/> : <></>
-        }
+        {user.id ? (
+          <div className="d-flex order-lg-3">
+            <li className="nav-item d-flex mx-5 my-2">
+              <div onClick={handleChange}>
+                <i className="bi bi-cart4 positio-relative cart">
+                  <span
+                    className="position-absolute
+
+                 translate-middle badge rounded-pill fs-4"
+                  >
+                    {productsLength ? productsLength : 0}
+                    <span className="visually-hidden">unread messages</span>
+                  </span>
+                </i>
+              </div>
+              {collapsed.collapsed ? <Cart></Cart> : <></>}
+            </li>
+          </div>
+        ) : (
+          <></>
+        )}
 
         {/* Menu */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto text-center mb-2 mb-lg-0 ul-menu">
             {/*Link de Productos*/}
             <li className="nav-item">
-              <Link
-                to="/products"
-                aria-current="page"
-                href="#"
-              >
+              <Link to="/products" aria-current="page" href="#">
                 Productos
               </Link>
             </li>
 
             {/* Input Buscar */}
-            <Search/>
+            <Search />
 
             {/* Dropdown Categorias */}
             <li className="nav-item dropdown">
@@ -121,9 +144,7 @@ const Footer = () => {
                 )}
               </div>
             </li>
-
           </ul>
-
         </div>
       </div>
     </nav>

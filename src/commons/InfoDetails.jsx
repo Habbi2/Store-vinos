@@ -57,9 +57,13 @@ const InfoDetails = () => {
               >
                 <i className="fa fa-shopping-cart cart"></i>
               </button>
+
+              <Link to="/checkout">
               <button className="btn btn-rounded btn-buy">
                 <strong>COMPRAR</strong>
               </button>
+              </Link>
+
               <h3 className="box-title mt-5">VALORACION</h3>
               <ul className="list-unstyled">
                 <li>{contenido.qualification}★ / 5★</li>
