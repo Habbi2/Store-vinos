@@ -1,15 +1,25 @@
 import { useState } from "react";
+import axios from "axios";
+import { setCart, setDeleteCart } from "../state/cart";
+import { useDispatch } from "react-redux";
 
 const CartItem = ({ product }) => {
   const [show, setShow] = useState({ collapsed: false });
-  const { name, price, quantity, image } = product;
+  const { name, price, quantity, image, id } = product;
   const [count, setCount] = useState(quantity);
+  const dispatch = useDispatch();
+
   const handleChange = () => {
     setShow({ collapsed: !show.collapsed });
   };
   const handleCount = (string) => {
     if (string === "add") setCount(count + 1);
     if (string === "substract") setCount(count - 1);
+  };
+
+  const handleDelete = () => {
+    dispatch(setDeleteCart({id : id}))
+    axios.get("/api/cart/get").then(({data}) => dispatch(setCart(data)));
   };
   return (
     <div className="cart-item">
@@ -39,7 +49,7 @@ const CartItem = ({ product }) => {
           <div className="edit-buttons">
             <button>back</button>
             <button>change</button>
-            <button>delete</button>
+            <button onClick={handleDelete}>delete</button>
           </div>
         </div>
       )}

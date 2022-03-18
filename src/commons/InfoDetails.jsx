@@ -2,8 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { useDispatch , useSelector } from "react-redux";
+import {setAddCart} from "../state/cart"
+
 
 const InfoDetails = () => {
+  const dispatch = useDispatch();
+
   const { name, id } = useParams();
   const [contenido, setContenido] = useState({});
 
@@ -14,6 +19,11 @@ const InfoDetails = () => {
         setContenido(data);
       });
   }, [name]);
+
+
+  const handleAddCart = () => {
+    dispatch(setAddCart({id:contenido.id}))
+  }
 
   return (
     <div className="container cuadro">
@@ -43,6 +53,7 @@ const InfoDetails = () => {
                 data-toggle="tooltip"
                 title=""
                 data-original-title="Add to cart"
+                onClick={handleAddCart}
               >
                 <i className="fa fa-shopping-cart cart"></i>
               </button>

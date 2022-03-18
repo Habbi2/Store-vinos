@@ -1,27 +1,32 @@
 import { Container, Row, Col } from "react-bootstrap";
 import CartItem from "./CartItem";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+import { useSelector, useDispatch } from "react-redux";
 
 function Cart() {
+  const dispatch = useDispatch();
+
   const [show, setShow] = useState({ collapsed: false });
-  const products = useSelector((state) => state.products);
-  const exampleProducts = [products[0], products[1]];
-  const total = exampleProducts
+  const products = useSelector((state) => state.cart);
+
+
+  const total = products
     .map((value) => value.price)
     .reduce((sum, a) => sum + a, 0);
-  console.log(total);
   const handleChange = () => {
     setShow({ collapsed: !show.collapsed });
   };
+
   return (
     <div className="cart-accordion">
       <Container style={{ width: 235 }}>
         <p onClick={handleChange}>Show items</p>
         {show.collapsed ? (
-          exampleProducts.map((value, index) => {
+          products.map((value, index) => {
             return (
-              <Row>
+              <Row key={index}>
                 <CartItem product={value} />
               </Row>
             );

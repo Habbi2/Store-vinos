@@ -5,14 +5,16 @@ import { useEffect, useState} from "react";
 import Search from "../commons/Search";
 import Cart from "../commons/Cart";
 import logoCopa from "../img/logoCopa.png";
+import Carrito from "../commons/Carrito";
 
 import { setLogoutRequest, setUserMeRequest } from "../state/user";
+import axios from "axios";
 
 const Footer = () => {
   const dispatch = useDispatch();
-  const [collapsed, setCollapsed] = useState({ collapsed: false });
-  const user = useSelector((state) => state.users);
 
+  const user = useSelector((state) => state.users);
+  
   useEffect(() => {
     dispatch(setUserMeRequest());
   }, [dispatch]);
@@ -20,11 +22,6 @@ const Footer = () => {
   const logoutButton = () => {
     dispatch(setLogoutRequest());
   };
-
-  const handleChange = () => {
-    setCollapsed({ collapsed: !collapsed.collapsed });
-  };
-
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -53,22 +50,9 @@ const Footer = () => {
         </Link>
 
         {/*Link de Carrito*/}
-        <div class="d-flex order-lg-3">
-          <li class="nav-item d-flex mx-5 my-2">
-            <div onClick={handleChange}>
-              <i class="bi bi-cart4 positio-relative cart">
-                <span
-                  class="position-absolute
-
-                 translate-middle badge rounded-pill fs-4"
-                >
-                  1<span class="visually-hidden">unread messages</span>
-                </span>
-              </i>
-            </div>
-            {collapsed.collapsed ? <Cart></Cart> : <></>}
-          </li>
-        </div>
+        {
+          user.id ? <Carrito/> : <></>
+        }
 
         {/* Menu */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
