@@ -11,8 +11,8 @@ const Card = ({ product }) => {
 
 return (
 <div className="col-sm">
-  <div className="card" style={{ width: "25rem" }} onClick={handleClick}>
-    <img src={product.image} className="card-img-top" alt="vino-card" />
+<div className="card shadow" style={{ width: "25rem" }} onClick={handleClick}>
+    <img src={product.image} className="card-img-top hover" alt="vino-card" />
     <div className="card-body">
       <h3 className="card-title"><strong>{product.name}</strong></h3>
       <h3 className="card-subtitle mb-2 text-muted">{product.cellar}</h3>

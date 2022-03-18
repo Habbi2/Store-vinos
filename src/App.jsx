@@ -51,11 +51,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/products" element={<Grid vinos={productos}/>} />
+        <Route path="/:products" element={<Grid vinos={productos}/>} />
 
-        <Route path={`/categories/tintos`} element={<Grid vinos={tintos}/>} />
-        <Route path={`/categories/blancos`} element={<Grid vinos={blancos}/>} />
-        <Route path={`/categories/rosados`} element={<Grid vinos={rosados}/>} />
+        <Route path={`/categories/${tintos[1] ? tintos[1].breed : null}`} element={<Grid vinos={tintos}/>} />
+        <Route path={`/categories/${blancos[1] ? blancos[1].breed : null}`} element={<Grid vinos={blancos}/>} />
+        <Route path={`/categories/${rosados[1] ? rosados[1].breed :  null}`} element={<Grid vinos={rosados}/>} />
 
 
         <Route path="/vinos/:keyword" element={<Grid vinos={search}/>} />

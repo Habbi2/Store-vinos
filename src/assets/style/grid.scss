@@ -1,5 +1,23 @@
 .grid{
-  padding-top: 8%;
+
   padding-bottom: 3%;
   grid-gap: 15px;
   }
+
+.hover:hover{
+  opacity:0.6;
+}
+
+.shadow:hover{
+  box-shadow: 60px 16px green;
+  border: solid 2px  rgb(189, 158, 100);
+}
+
+.tituloCategorias{
+  padding-top: 3%;
+
+  font-weight: 600;
+  font-size: 4rem;
+  font-family: 'Smooch Sans', sans-serif;
+  color: #8a846f;
+}

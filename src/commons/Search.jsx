@@ -34,9 +34,9 @@ const Search = () => {
 
 
   return (
-    <form class="d-flex d-none d-lg-block w-25 mx-5" onSubmit={handleSubmit}>
+    <form className="d-flex d-none d-lg-block w-25 mx-5" onSubmit={handleSubmit}>
     <input
-      class="form-control me-md-3 "
+      className="form-control me-md-3 "
       type="search"
       placeholder="Buscar..."
       aria-label="Search"

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 const InfoDetails = () => {
   const { name, id } = useParams();
@@ -52,6 +53,15 @@ const InfoDetails = () => {
               <ul className="list-unstyled">
                 <li>{contenido.qualification}★ / 5★</li>
               </ul>
+
+              <div className="categorias">
+                <h3 className="box-title mt-5">
+                  Categoria:
+                  <Link to={`/categories/${contenido.breed}`}>
+                    <span>{contenido.breed}</span>
+                  </Link>
+                </h3>
+              </div>
             </div>
           </div>
         </div>
