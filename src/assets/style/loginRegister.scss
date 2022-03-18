@@ -148,8 +148,8 @@ html {
   }
   
   .contenedor-form {
-    padding: 5rem 3rem;
-    max-width: 500px;
+    padding: 2.2rem 3rem;
+    max-width: 80rem;
     width: 95%;
     background-color: $blanco;
     border-width: 3px;
@@ -162,12 +162,15 @@ html {
     display: flex;
     margin-bottom: 2rem;
     align-items: center;
+    justify-content: space-around;
   }
   .campo-form:last-of-type {
     margin: 0;
   }
   .campo-form label {
     flex: 0 0 100px;
+    width: 9rem;
+    
   }
   .campo-form input[type='password'],
   .campo-form input[type='email'],

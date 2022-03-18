@@ -33,6 +33,8 @@ const Register = () => {
         <h1>Crear un usuario</h1>
         <form onSubmit={onSubmit}>
           <div className="campo-form">
+
+            <div>
             <label>Nombre</label>
             <input
               type="text"
@@ -42,8 +44,9 @@ const Register = () => {
               required
               onChange={onChange}
             ></input>
-          </div>
-          <div className="campo-form">
+
+            </div>
+        <div>
             <label>Apellido</label>
             <input
               type="text"
@@ -53,9 +56,12 @@ const Register = () => {
               required
               onChange={onChange}
             ></input>
+
+        </div>
           </div>
 
           <div className="campo-form">
+           <div>
             <label>Email</label>
             <input
               type="email"
@@ -65,8 +71,10 @@ const Register = () => {
               required
               onChange={onChange}
             ></input>
-          </div>
-          <div className="campo-form">
+
+           </div>
+
+          <div>
             <label>Teléfono</label>
             <input
               type="text"
@@ -76,8 +84,13 @@ const Register = () => {
               required
               onChange={onChange}
             ></input>
+
+          </div>
           </div>
           <div className="campo-form">
+            
+            <div>
+
             <label>Ciudad</label>
             <input
               type="text"
@@ -87,8 +100,10 @@ const Register = () => {
               required
               onChange={onChange}
             ></input>
-          </div>
-          <div className="campo-form">
+            </div>
+        
+        <div>
+
             <label>Contraseña</label>
             <input
               type="password"
@@ -98,6 +113,7 @@ const Register = () => {
               required
               onChange={onChange}
             ></input>
+        </div>
           </div>
           <div className="campo-form">
             <input

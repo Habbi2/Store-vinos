@@ -16,8 +16,8 @@ function Cart() {
   };
   return (
     <div className="cart-accordion">
-      <Container style={{ width: 235 }}>
-        <p onClick={handleChange}>Show items</p>
+      <Container>
+        <p onClick={handleChange}><button className="btn btn-rounded btn-buy"><strong>MOSTRAR ITEMS</strong> </button></p>
         {show.collapsed ? (
           exampleProducts.map((value, index) => {
             return (
@@ -32,10 +32,10 @@ function Cart() {
         <hr />
         <Row>
           <Col xs={6}>
-            <h3>Total:</h3>
+            <h3 className="text-white">Total:</h3>
           </Col>
           <Col xs={6}>
-            <h3>{total}</h3>
+            <h3 className="text-white">{"$" + total}</h3>
           </Col>
         </Row>
         <br />

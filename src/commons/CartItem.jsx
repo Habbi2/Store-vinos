@@ -24,22 +24,22 @@ const CartItem = ({ product }) => {
         <div>
           <p>{name}</p>
           <p>{quantity}</p>
-          <p>{price + " $ "}</p>
+          <p>{" $ " + price}</p>
         </div>
       </div>
       {!show.collapsed ? (
-        <button onClick={handleChange}>Editar</button>
+        <button onClick={handleChange} className="btn btn-rounded btn-buy">EDITAR</button>
       ) : (
         <div className="edit">
           <div className="edit-info">
-            <h3 onClick={() => handleCount("substract")}>-</h3>
-            <h3>{count}</h3>
-            <h3 onClick={() => handleCount("add")}>+</h3>
+            <h3 className="text-white" onClick={() => handleCount("substract")}>-</h3>
+            <h3 className="text-white">{count}</h3>
+            <h3 className="text-white" onClick={() => handleCount("add")}>+</h3>
           </div>
           <div className="edit-buttons">
-            <button>back</button>
-            <button>change</button>
-            <button>delete</button>
+            <button className="btn btn-rounded btn-buy">ATRAS</button>
+            <button className="btn btn-rounded btn-buy">CAMBIAR</button>
+            <button className="btn btn-rounded btn-buy">ELIMINAR</button>
           </div>
         </div>
       )}
