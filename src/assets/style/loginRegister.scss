@@ -1,5 +1,8 @@
 @import "./colors.scss";
-  
+html {
+  height: 100vh;
+} 
+
   h1,
   h2 {
     font-weight: 900;
@@ -138,11 +141,10 @@
   
   .form-usuario {
     background-color: rgb(236, 236, 236);
-    height: 100vh;
-    min-height: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 3rem 0;
   }
   
   .contenedor-form {
