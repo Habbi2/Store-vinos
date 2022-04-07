@@ -1,7 +1,7 @@
 const { DataTypes, Model } = require("sequelize");
 const db = require("../db");
 const bcrypt = require("bcrypt");
-const Cart = require("./Cart")
+/* const Cart = require("./Cart") */
 const Products = require("./Products")
 
 class User extends Model {
@@ -74,7 +74,7 @@ User.beforeBulkUpdate((user) => {
     });
 });
 
-User.hasMany(Products, {as: "products"})
+/* User.hasMany(Products, {as: "products"}) */
 
 module.exports = User;
 

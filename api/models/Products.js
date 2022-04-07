@@ -9,11 +9,11 @@ Products.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    breed: {
+    category: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    cellar: {
+    location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -29,12 +29,8 @@ Products.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    quantity: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    qualification: {
-      type: DataTypes.INTEGER,
+    available: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
   },

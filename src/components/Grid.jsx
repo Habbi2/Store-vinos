@@ -1,26 +1,31 @@
-import { useSelector } from "react-redux";
 import Card from "../commons/Card";
-import { useParams } from "react-router";
-import "../assets/style/grid.scss"
+import { useLocation } from "react-router";
+import "../assets/style/grid.scss";
 
-const Grid = ({vinos}) => {
-  const {products} = useParams();
-
+const Grid = ({ propiedades }) => {
+  const path = useLocation().pathname
   return (
     <div className="container">
-      <h2 className="tituloCategorias">
-        {
-          products ? "Nuestra carta de productos para vos" : vinos[1].breed === "Tinto" ? "Nuestra seleccion de tintos" : vinos[1].breed === "Blanco" ? "Nuestra seleccion de blancos" :  vinos[1].breed === "Rosado" ? "Nuestra seleccion de rosados" : null
-        }
-      </h2>
+      {propiedades.length > 0 ? (
+        <div>
+          <h2 className="tituloCategorias">
+            {path === "/products" ? "Estas son nuestras opciones" : `Listado de propiedades según su elección de categoría`}
+          </h2>
+        </div>
+      ) : (
+        <></>
+      )}
       <div className="row grid">
-        {vinos ? vinos.map((value, index) => {
-          return <Card key={index} product={value} />;
-        }) : <p>cargando...</p>}
+        {propiedades.length > 0 ? (
+          propiedades.map((value, index) => {
+            return <Card key={index} product={value} />;
+          })
+        ) : (
+          <p>cargando...</p>
+        )}
       </div>
     </div>
   );
 };
 
 export default Grid;
-

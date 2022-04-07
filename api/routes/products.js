@@ -1,34 +1,56 @@
 const express = require("express");
 const router = express.Router();
 const Products = require("../models/Products");
-const Users = require("../models/Users");
 
 
-//obtener vinos
+//obtener propiedades
 router.get("/all", (req, res) => {
   Products.findAll().then((products) => {
     res.status(200).send(products);
   });
 });
 
-router.get("/list/tinto", (req, res) => {
-  Products.findAll({ where: {breed: "Tinto"}}).then((products) => {
+router.get("/list/departamento", (req, res) => {
+  Products.findAll({ where: {category: "Departamento"}}).then((products) => {
     res.status(200).send(products);
   });
 });
 
-router.get("/list/blanco", (req, res) => {
-  Products.findAll({ where: {breed: "Blanco"}}).then((products) => {
+router.get("/list/casa", (req, res) => {
+  Products.findAll({ where: {category: "Casa"}}).then((products) => {
     res.status(200).send(products);
   });
 });
 
-router.get("/list/rosado", (req, res) => {
-  Products.findAll({ where: {breed: "Rosado"}}).then((products) => {
+router.get("/list/local", (req, res) => {
+  Products.findAll({ where: {category: "Local"}}).then((products) => {
     res.status(200).send(products);
   });
 });
-//hasta aca estan bien
+
+router.get("/list/caba", (req, res) => {
+  Products.findAll({ where: {location: "CABA"}}).then((products) => {
+    res.status(200).send(products);
+  });
+});
+
+router.get("/list/zona_norte", (req, res) => {
+  Products.findAll({ where: {location: "Zona Norte"}}).then((products) => {
+    res.status(200).send(products);
+  });
+});
+
+router.get("/list/zona_oeste", (req, res) => {
+  Products.findAll({ where: {location: "Zona Oeste"}}).then((products) => {
+    res.status(200).send(products);
+  });
+});
+
+router.get("/list/zona_sur", (req, res) => {
+  Products.findAll({ where: {location: "Zona Sur"}}).then((products) => {
+    res.status(200).send(products);
+  });
+});
 
 router.post("/add", (req, res) => {
   Products.create(req.body).then((newProduct) => {

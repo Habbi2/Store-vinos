@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,8 +10,8 @@ import { setSearch } from "../state/search";
 const Search = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-/*   const productsFind = useSelector((state) => state.products)
-  console.log(productsFind) */
+  const productsFind = useSelector((state) => state.products)
+  console.log(productsFind)
 
   const [keyword, setKeyword] = useState("");
 
@@ -46,4 +46,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Search; */

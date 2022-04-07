@@ -39,10 +39,18 @@
 }
 
 
-.cart{
+/* .cart{
     color: white;
+} */
+
+.btn-buy, hr {
+    margin: 5px;
+    background-color: rgb(119, 98, 100);
+
 }
 
-.btn-buy{
-    background-color: rgb(189, 158, 100);
+.btn-buy:hover {
+    background-color: rgb(71, 51, 53);
+    opacity:0.8;
+
 }

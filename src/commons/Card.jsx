@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
-import {Link} from "react-router-dom"
-import InfoDetails from "./InfoDetails";
+/* import {Link} from "react-router-dom"
+import InfoDetails from "./InfoDetails"; */
 
 const Card = ({ product }) => {
   const navigate = useNavigate();
@@ -12,16 +12,16 @@ const Card = ({ product }) => {
 return (
 <div className="col-sm">
 <div className="card shadow" style={{ width: "25rem" }} onClick={handleClick}>
-    <img src={product.image} className="card-img-top hover" alt="vino-card" />
+    <img src={product.image} className="card-img-top hover" style={{ width: "25rem", height: "18rem"}} alt="propiedad-card" />
     <div className="card-body">
       <h3 className="card-title"><strong>{product.name}</strong></h3>
-      <h3 className="card-subtitle mb-2 text-muted">{product.cellar}</h3>
+      <h3 className="card-subtitle mb-2 text-muted">{product.location}</h3>
       <p className="card-text">
-        <strong>${product.price}.00</strong>
+        <strong>USD{product.price}.000</strong>
       </p>
 
       <div style={{textAlign: 'center'}}>
-      <button type="button" className="btn btn-dark" >Añadir al carrito</button>
+      <button type="button" className="btn btn-dark" >Reservar visita</button>
       </div>
 
     </div>

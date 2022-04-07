@@ -1,4 +1,6 @@
-const express = require("express");
+//routes
+
+/* const express = require("express");
 const router = express.Router();
 const Cart = require("../models/Cart");
 const Products = require("../models/Products");
@@ -72,3 +74,4 @@ router.post("/edit", async function (req, res) {
 });
 
 module.exports = router;
+ */

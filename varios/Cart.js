@@ -1,4 +1,6 @@
-const { DataTypes, Model } = require("sequelize");
+// models
+
+/* const { DataTypes, Model } = require("sequelize");
 const db = require("../db");
 const Users = require("./Users")
 
@@ -40,4 +42,4 @@ Cart.init(
 );
 
 
-module.exports = Cart;
+module.exports = Cart; */

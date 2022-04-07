@@ -31,7 +31,7 @@ router.post("/logout", (req, res) => {
   res.sendStatus(200);
 });
 
-router.put('/edit/:email', /* passport.authenticate("local") , */(req, res) => {
+router.put('/edit/:email', passport.authenticate("local") , (req, res) => {
   if (!req.user) {
     return res.sendStatus(401)
   }

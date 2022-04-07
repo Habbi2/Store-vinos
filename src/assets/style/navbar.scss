@@ -25,12 +25,11 @@
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-decoration: none;
     text-transform: uppercase;
-    // margin: 0 1em;
     color: whitesmoke;
   }
 
   a:hover {
-    color: rgb(189, 158, 100);
+    color: rgb(119, 98, 100);
   }
 
   .form {
@@ -54,7 +53,7 @@
   }
 
   input:focus {
-    border: 3px solid rgb(189, 158, 100);
+    border: 3px solid rgb(119, 98, 100);
   }
 
   input::placeholder {
@@ -65,13 +64,8 @@
   }
 }
 
-.cart {
-  color: whitesmoke;
-  font-size: 2em;
-}
-
 .badge {
-  background-color: rgb(189, 158, 100);
+  background-color: rgb(119, 98, 100);
 }
 
 
@@ -79,30 +73,22 @@
   width: 10.5rem;
   background-color: rgb(19, 18, 18);
   border: none;
-  font-size: 1em;
+  font-size: 11px;
   border-bottom-left-radius: 0.7rem;
   border-bottom-right-radius: 0.7rem;
 
   hr {
-    color: rgb(189, 158, 100);
+    color: whitesmoke;
   }
 
   .dropdown-item {
-    color: rgb(189, 158, 100);
-    //     font-weight: bold;
-    //     margin: 0;
-    //   }
+    color: whitesmoke;
   }
 
   .dropdown-item:hover {
     background-color: rgb(19, 18, 18);
-    color: rgb(189, 158, 100);
+    color: rgb(119, 98, 100);
   }
-  // @media (max-width: 768px) {
-
-  //   .navbar {
-  //     height: 15rem;
-  //   }
 }
 
 @media (max-width: 992px) {

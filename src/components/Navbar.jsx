@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import logoCopa from "../img/logoCopa.png";
+import { useEffect, useState} from "react";
 
-import Search from "../commons/Search"
+/* import Search from "../commons/Search"; */
+import logocasa from "../img/logocasa.jpg";
+
 import { setLogoutRequest, setUserMeRequest } from "../state/user";
+import { ToastHeader } from "react-bootstrap";
 
-const Navbar = () => {
+const Header = () => {
   const dispatch = useDispatch();
-
+  const [collapsed, setCollapsed] = useState({ collapsed: false });
   const user = useSelector((state) => state.users);
 
   useEffect(() => {
@@ -17,6 +19,10 @@ const Navbar = () => {
 
   const logoutButton = () => {
     dispatch(setLogoutRequest());
+  };
+
+  const handleChange = () => {
+    setCollapsed({ collapsed: !collapsed.collapsed });
   };
 
   return (
@@ -38,30 +44,13 @@ const Navbar = () => {
         {/* Imagen y Titulo */}
         <Link to="/" className="navbar-brand fs-2 ms-5">
           <img
-            src={logoCopa}
+            src={logocasa}
             alt="Logo"
             className="d-inline-block aling-top"
             style={{ width: 50 }}
           />
-          Alguien dijo Vino?
+          IntegradorProp
         </Link>
-
-        {/*Link de Carrito*/}
-        <div className="d-flex order-lg-3">
-          <li className="nav-item d-flex mx-5 my-2">
-            <Link to="/Cart" className="nav-link" aria-current="page" href="#">
-              <i className="bi bi-cart4 positio-relative cart">
-                <span
-                  className="position-absolute
-                  
-                 translate-middle badge rounded-pill fs-4"
-                >
-                  1<span className="visually-hidden">unread messages</span>
-                </span>
-              </i>
-            </Link>
-          </li>
-        </div>
 
         {/* Menu */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -73,12 +62,12 @@ const Navbar = () => {
                 aria-current="page"
                 href="#"
               >
-                Productos
+                Propiedades
               </Link>
             </li>
 
             {/* Input Buscar */}
-            <Search/>
+            {/* <Search/> */}
 
             {/* Dropdown Categorias */}
             <li className="nav-item dropdown">
@@ -97,16 +86,52 @@ const Navbar = () => {
                 aria-labelledby="navbarDropdown"
               >
                 <hr className="dropdown-divider"></hr>
-                <Link to="/categories/Tinto" className="dropdown-item">
-                  Tinto
+                <Link to="/categories/Departamento" className="dropdown-item">
+                  Departamento
                 </Link>
                 <hr className="dropdown-divider"></hr>
-                <Link to="/categories/Blanco" className="dropdown-item">
-                  Blanco
+                <Link to="/categories/Casa" className="dropdown-item">
+                  Casa
                 </Link>
                 <hr className="dropdown-divider"></hr>
-                <Link to="/categories/Rosado" className="dropdown-item">
-                  Rosado
+                <Link to="/categories/Local" className="dropdown-item">
+                  Local
+                </Link>
+                <hr className="dropdown-divider"></hr>
+              </ul>
+            </li>
+
+            {/* Dropdown Categorias */}
+            <li className="nav-item dropdown">
+              <a
+                className="dropdown-toggle"
+                href="index.html"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Ubicacion
+              </a>
+              <ul
+                className="dropdown-menu text-center"
+                aria-labelledby="navbarDropdown"
+              >
+                <hr className="dropdown-divider"></hr>
+                <Link to="/location/CABA" className="dropdown-item">
+                  CABA
+                </Link>
+                <hr className="dropdown-divider"></hr>
+                <Link to="/location/Zona_Norte" className="dropdown-item">
+                  Zona Norte
+                </Link>
+                <hr className="dropdown-divider"></hr>
+                <Link to="/location/Zona_Oeste" className="dropdown-item">
+                  Zona Oeste
+                </Link>
+                <hr className="dropdown-divider"></hr>
+                <Link to="/location/Zona_Sur" className="dropdown-item">
+                  Zona Sur
                 </Link>
                 <hr className="dropdown-divider"></hr>
               </ul>
@@ -119,13 +144,13 @@ const Navbar = () => {
                   <div className="form">
                     <Link to="/">{user.name}</Link>
                     <Link to="/" onClick={logoutButton}>
-                      LogOut
+                      Salir
                     </Link>
                   </div>
                 ) : (
                   <div className="form">
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Sign up</Link>
+                    <Link to="/login">Ingresar</Link>
+                    <Link to="/register">Registrarse</Link>
                   </div>
                 )}
               </div>
@@ -139,4 +164,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

@@ -5,16 +5,12 @@
 @import "./loginRegister.scss";
 @import "./navbar.scss";
 @import "./infoDetails.scss";
+
 * {
   font-family: "Raleway", sans-serif;
   color: $colorTexto;
   
 }
-
-/* :root {
-  $headingFont: 'Raleway', sans-serif;
-  $textFont: 'Roboto', sans-serif;
-} */
 
 html {
   box-sizing: border-box;

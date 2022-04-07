@@ -15,7 +15,7 @@ const routes = require("./routes");
 //models
 const User = require("./models/Users");
 const Products = require("./models/Products");
-const Cart = require("./models/Cart");
+/* const Cart = require("./models/Cart"); */
 
 //middleware
 app.use(express.json());
@@ -29,7 +29,7 @@ app.use(cookieParser());
 
 app.use(
   sessions({
-    secret: "vino",
+    secret: "propiedad",
     resave: true,
     saveUninitialized: true,
   })

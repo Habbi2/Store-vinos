@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const db = new Sequelize('storevinos', null, null, {
+const db = new Sequelize('propiedades', null, null, {
   host: 'localhost',
   dialect: 'postgres',
   logging: false

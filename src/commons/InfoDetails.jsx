@@ -20,40 +20,46 @@ const InfoDetails = () => {
       <div className="cardDetail">
         <div className="card-body">
           <div className="row">
-            <div className="col-lg-5 col-md-5 col-sm-6">
+            <div className="col-lg-6 col-md-12 col-sm-12">
               <div className="white-box text-center ">
-                <img src={contenido.image} className="img-responsive" />
+                <img src={contenido.image} className="w-100" />
               </div>
             </div>
-            <div className="col-lg-7 col-md-12 col-sm-12">
+            <div className="col-lg-6 col-md-12 col-sm-12">
               <h2 className="card-title d-flex pt-4">{contenido.name}</h2>
-              <h3 className="card-subtitle d-flex">{contenido.cellar}</h3>
+              <h3 className="card-subtitle d-flex">{contenido.location}</h3>
+              <hr className="dropdown-divider me-5"></hr>
               <h4 className="box-title mt-5 card-d">DESCRIPCION</h4>
-              <p className="me-5">{contenido.description}.</p>
+              <p className="me-5">{contenido.description}</p>
               <h2 className="mt-5 d-flex">
-                ${contenido.price},00<small className="text-success"></small>
+                USD{contenido.price}.000<small className="text-success"></small>
               </h2>
-              <button
+              <hr className="dropdown-divider me-5"></hr>
+              {/* <button
                 className="btn btn-dark btn-rounded me-4"
                 data-toggle="tooltip"
                 title=""
                 data-original-title="Add to cart"
               >
                 <i className="fa fa-shopping-cart cart"></i>
-              </button>
+              </button> */}
               <button className="btn btn-rounded btn-buy">
-                <strong>COMPRAR</strong>
+                <strong>Reservar visita</strong>
               </button>
-              <h3 className="box-title mt-5">VALORACION</h3>
+              {/* <h3 className="box-title mt-5">VALORACION</h3>
               <ul className="list-unstyled">
                 <li>{contenido.qualification}★ / 5★</li>
-              </ul>
+              </ul> */}
+          
+              <button className="btn btn-rounded btn-buy">
+              <i class="fa fa-heart"></i> <span><strong>Agregar a favoritos</strong></span>
+              </button>
 
               <div className="categorias">
                 <h3 className="box-title mt-5">
                   Categoria:
-                  <Link to={`/categories/${contenido.breed}`}>
-                    <span>{contenido.breed}</span>
+                  <Link to={`/categories/${contenido.category}`}>
+                    <span> {contenido.category}</span>
                   </Link>
                 </h3>
               </div>

@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap");
+
+.footer {
+  font-family: "Balsamiq Sans", cursive;
+  background-color: rgb(0, 0, 0);
+  padding: 2rem 0;
+
+  a:hover {
+    color: rgb(119, 98, 100);
+  }
+
+  hr {
+    color: rgb(119, 98, 100);
+  }
+
+  i {
+    font-size: 1.5em;
+  }
+
+  .btn {
+    margin-top: 0;
+  }
+}
+
+.instagram:hover {
+  background: radial-gradient(
+    circle at 33% 100%,
+    #fed373 4%,
+    #f15245 30%,
+    #d92e7f 62%,
+    #9b36b7 85%,
+    #515ecf
+  );
+}
+
+.bg-copyright {
+  background-color: rgb(0, 0, 0);
+
+  a {
+      text-decoration: none;
+  }
+}
+
+.letter {
+  color: whitesmoke;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+}
+
+.navbar-brand {
+  font-family: "Caveat", cursive;
+  text-transform: uppercase;
+  color: whitesmoke;
+}
