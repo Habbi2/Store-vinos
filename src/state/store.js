@@ -3,13 +3,15 @@ import logger from "redux-logger";
 import productsReducer from "./products";
 import {usersReducer} from "./user";
 import { searchReducer } from "./search";
+import { cartReducer } from "./cart";
 
 const store = configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   reducer: {
     products: productsReducer,
     users: usersReducer,
-    search: searchReducer
+    search: searchReducer,
+    cart: cartReducer
   },
 });
 

@@ -1,13 +1,27 @@
+<<<<<<< HEAD:varios/cart.scss
 /* .cart-accordion {
   background-color: white;
+=======
+
+.cart-accordion {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #131212;
+>>>>>>> dc0465699b5b05f261bea843a1b2a374741a5ffd:src/assets/style/cart.scss
   position: absolute;
-  top: 70px;
-  right: 50px;
+  top: 68px;
+  right: 0.05rem;
 }
 
 .media {
-  width: 200px;
+  width: 25rem;
   display: inline-flex;
+  
+
+  p {
+    padding-left: 1rem;
+    color: whitesmoke;
+  }
 }
 
 .cart-item {
@@ -16,9 +30,11 @@
   align-items: flex-start;
   margin-bottom: 10px;
   button {
+<<<<<<< HEAD:varios/cart.scss
     background-color: #4caf50;
+=======
+>>>>>>> dc0465699b5b05f261bea843a1b2a374741a5ffd:src/assets/style/cart.scss
     border: none;
-    color: white;
     margin-top: 5px;
     padding: 5px 16px;
     text-align: center;
@@ -26,7 +42,11 @@
     display: inline-block;
     font-size: 13px;
     margin-right: 7px;
+ 
+ 
   }
+
+  
 
   .edit {
     display: flex;

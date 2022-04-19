@@ -1,16 +1,35 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
+<<<<<<< HEAD
 /* import Search from "../commons/Search"; */
 import logocasa from "../img/logocasa.jpg";
 
 import { setLogoutRequest, setUserMeRequest } from "../state/user";
 import { ToastHeader } from "react-bootstrap";
+=======
+import Search from "../commons/Search";
+import Cart from "../commons/Cart";
+import logoCopa from "../img/logoCopa.png";
+import { setCart } from "../state/cart";
+import { setLogoutRequest, setUserMeRequest } from "../state/user";
+import axios from "axios";
+>>>>>>> dc0465699b5b05f261bea843a1b2a374741a5ffd
 
 const Header = () => {
   const dispatch = useDispatch();
   const [collapsed, setCollapsed] = useState({ collapsed: false });
+  const productsLength = useSelector((state) => state.cart).length;
+
+  useEffect(() => {
+    axios.get("/api/cart/get").then(({ data }) => dispatch(setCart(data)));
+  }, [dispatch]);
+
+  const handleChange = () => {
+    setCollapsed({ collapsed: !collapsed.collapsed });
+  };
+
   const user = useSelector((state) => state.users);
 
   useEffect(() => {
@@ -20,11 +39,6 @@ const Header = () => {
   const logoutButton = () => {
     dispatch(setLogoutRequest());
   };
-
-  const handleChange = () => {
-    setCollapsed({ collapsed: !collapsed.collapsed });
-  };
-
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-dark">
       <div className="container-fluid">
@@ -52,22 +66,57 @@ const Header = () => {
           IntegradorProp
         </Link>
 
+<<<<<<< HEAD
+=======
+        {/*Link de Carrito*/}
+        {user.id ? (
+          <div className="d-flex order-lg-3">
+            <li className="nav-item d-flex mx-5 my-2">
+              <div onClick={handleChange}>
+                <i className="bi bi-cart4 positio-relative cart">
+                  <span
+                    className="position-absolute
+
+                 translate-middle badge rounded-pill fs-4"
+                  >
+                    {productsLength ? productsLength : 0}
+                    <span className="visually-hidden">unread messages</span>
+                  </span>
+                </i>
+              </div>
+              {collapsed.collapsed ? <Cart></Cart> : <></>}
+            </li>
+          </div>
+        ) : (
+          <></>
+        )}
+
+>>>>>>> dc0465699b5b05f261bea843a1b2a374741a5ffd
         {/* Menu */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto text-center mb-2 mb-lg-0 ul-menu">
             {/*Link de Productos*/}
             <li className="nav-item">
+<<<<<<< HEAD
               <Link
                 to="/products"
                 aria-current="page"
                 href="#"
               >
                 Propiedades
+=======
+              <Link to="/products" aria-current="page" href="#">
+                Productos
+>>>>>>> dc0465699b5b05f261bea843a1b2a374741a5ffd
               </Link>
             </li>
 
             {/* Input Buscar */}
+<<<<<<< HEAD
             {/* <Search/> */}
+=======
+            <Search />
+>>>>>>> dc0465699b5b05f261bea843a1b2a374741a5ffd
 
             {/* Dropdown Categorias */}
             <li className="nav-item dropdown">
@@ -155,9 +204,7 @@ const Header = () => {
                 )}
               </div>
             </li>
-
           </ul>
-
         </div>
       </div>
     </nav>

@@ -10,8 +10,11 @@ import { setSearch } from "../state/search";
 const Search = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+<<<<<<< HEAD
   const productsFind = useSelector((state) => state.products)
   console.log(productsFind)
+=======
+>>>>>>> dc0465699b5b05f261bea843a1b2a374741a5ffd
 
   const [keyword, setKeyword] = useState("");
 

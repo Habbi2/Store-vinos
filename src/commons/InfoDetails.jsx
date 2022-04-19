@@ -2,8 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { useDispatch , useSelector } from "react-redux";
+import {setAddCart} from "../state/cart"
+
 
 const InfoDetails = () => {
+  const dispatch = useDispatch();
+
   const { name, id } = useParams();
   const [contenido, setContenido] = useState({});
 
@@ -14,6 +19,11 @@ const InfoDetails = () => {
         setContenido(data);
       });
   }, [name]);
+
+
+  const handleAddCart = () => {
+    dispatch(setAddCart({id:contenido.id}))
+  }
 
   return (
     <div className="container cuadro">
@@ -40,13 +50,26 @@ const InfoDetails = () => {
                 data-toggle="tooltip"
                 title=""
                 data-original-title="Add to cart"
+                onClick={handleAddCart}
               >
                 <i className="fa fa-shopping-cart cart"></i>
+<<<<<<< HEAD
               </button> */}
+=======
+              </button>
+
+              <Link to="/checkout">
+>>>>>>> dc0465699b5b05f261bea843a1b2a374741a5ffd
               <button className="btn btn-rounded btn-buy">
                 <strong>Reservar visita</strong>
               </button>
+<<<<<<< HEAD
               {/* <h3 className="box-title mt-5">VALORACION</h3>
+=======
+              </Link>
+
+              <h3 className="box-title mt-5">VALORACION</h3>
+>>>>>>> dc0465699b5b05f261bea843a1b2a374741a5ffd
               <ul className="list-unstyled">
                 <li>{contenido.qualification}★ / 5★</li>
               </ul> */}
